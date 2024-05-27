@@ -14,6 +14,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/system
     inputs.home-manager.nixosModules.default
   ];
 
@@ -28,28 +29,7 @@
     "nix-command"
     "flakes"
   ];
-  networking.hostName = "seifenkiste"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  networking.stevenblack.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   nixpkgs.config.allowUnfree = true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "de_DE.UTF-8";
-  console = {
-    #   font = "Lat2-Terminus16";
-    keyMap = "de";
-    #   useXkbConfig = true; # use xkb.options in tty.
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -60,40 +40,8 @@
   services.displayManager.sddm.autoNumlock = true;
   programs.xwayland.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "de";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  security.rtkit.enable = true;
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  # Bluetooth Media Controls
-  systemd.user.services.mpris-proxy = {
-    description = "Mpris proxy";
-    after = [
-      "network.target"
-      "sound.target"
-    ];
-    wantedBy = [ "default.target" ];
-    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -111,50 +59,6 @@
       #    firefox
       #   tree
     ];
-  };
-
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "FiraMono"
-        ];
-      })
-      fira-code
-      fira-mono
-      vollkorn
-      ubuntu_font_family
-      noto-fonts-monochrome-emoji
-      twitter-color-emoji
-      unicode-emoji
-    ];
-    fontconfig = {
-      defaultFonts = {
-        serif = [
-          "Vollkorn"
-          "Liberation Serif"
-          "Vazirmatn"
-        ];
-        sansSerif = [
-          "Ubuntu"
-          "Vazirmatn"
-        ];
-        monospace = [
-          "FiraCodeNerdFont"
-          "FiraCodeNerdFontMono"
-          "Fira Code"
-          "FiraCode"
-          "Ubuntu Mono"
-        ];
-        emoji = [
-          "Twitter Color Emoji"
-          "Noto Color Emoji"
-          "Noto Emoji"
-        ];
-      };
-    };
   };
 
   hardware.opengl = {
@@ -220,12 +124,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
