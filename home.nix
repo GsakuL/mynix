@@ -7,6 +7,10 @@
 }:
 
 {
+  # TODO: update when NixOS/HM gets released
+  # i needed an option for XBOOTLDR
+  home.enableNixpkgsReleaseCheck = false;
+
   imports = [
     #./firefox.nix
     ./modules/home/programs
