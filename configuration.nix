@@ -12,18 +12,9 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ./modules/system
     inputs.home-manager.nixosModules.default
   ];
-
-  boot.supportedFilesystems = [ "ntfs" ];
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/efi";
-  boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -60,18 +51,6 @@
       #   tree
     ];
   };
-
-  hardware.opengl = {
-    enable = true;
-    ## radv: an open-source Vulkan driver from freedesktop
-    driSupport = true;
-    driSupport32Bit = true;
-
-    ## amdvlk: an open-source Vulkan driver from AMD
-    extraPackages = with pkgs; [ amdvlk ];
-    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-  };
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   programs = {
     tmux = {

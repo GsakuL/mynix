@@ -4,13 +4,16 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    ./filesystems.nix
+    ./graphics.nix
+  ];
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -24,58 +27,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXROOT";
-      fsType = "ext4";
-    };
-    "/efi" = {
-      device = "/dev/disk/by-label/EFIBOOT";
-      fsType = "vfat";
-    };
-    "/boot" = {
-      device = "/dev/disk/by-label/XBOOTLDR";
-      fsType = "vfat";
-    };
-    "/media/Data" = {
-      device = "/dev/disk/by-label/Data";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "norecover"
-      ];
-    };
-    "/media/SPEEEEET" = {
-      device = "/dev/disk/by-label/SPEEEEET";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "norecover"
-      ];
-    };
-    "/media/SPEEEEEEEED" = {
-      device = "/dev/disk/by-label/SPEEEEEEEED";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "norecover"
-      ];
-    };
-  };
-
-  swapDevices = [
-    {
-      device = "/.swapfile";
-      size = 36508;
-    }
-  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
