@@ -1,34 +1,19 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
     #./firefox.nix
+    ./games.nix
     ./git.nix
     ./vscode.nix
     ./zsh
+    ./work.nix
   ];
-
-  programs.mangohud = {
-    enable = true;
-    enableSessionWide = true;
-  };
 
   programs.tmux = {
     enable = true;
     clock24 = true;
     mouse = true;
-  };
-
-  home.activation = {
-    fixCitrix = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      [ -f "$HOME/.ICAClient/wfclient.ini" ] && run sed -i -E 's/^MouseSendsControlV=(True|\*)?$/MouseSendsControlV=False/' "$HOME/.ICAClient/wfclient.ini"
-    '';
   };
 
   # The home.packages option allows you to install Nix packages into your
@@ -38,12 +23,10 @@
     signal-desktop
     telegram-desktop
     discord
-    wootility
     keepassxc
     ungoogled-chromium
 
     xwaylandvideobridge
-    amdgpu_top
     btop
     neofetch
     powershell
@@ -55,8 +38,6 @@
     hunspellDicts.en_US
     hunspellDicts.en_GB-ise
 
-    teams-for-linux
-
     p7zip
     pxz
 
@@ -64,9 +45,6 @@
     caffeine-ng
 
     nixfmt-rfc-style
-
-    bottles
-    lutris
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
