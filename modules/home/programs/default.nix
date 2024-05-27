@@ -9,8 +9,9 @@
 {
   imports = [
     #./firefox.nix
-    ./zsh
     ./git.nix
+    ./vscode.nix
+    ./zsh
   ];
 
   programs.mangohud = {
