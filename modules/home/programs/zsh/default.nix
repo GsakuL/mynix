@@ -27,6 +27,7 @@ in
 
     initExtra = ''
       source $HOME/${zshDotDir}/plugins/powerlevel10k-config/.p10k.zsh
+      source $HOME/${zshDotDir}/plugins/my-stuff/my-stuff.zsh
     '';
 
     plugins = [
@@ -39,6 +40,11 @@ in
         name = "powerlevel10k-config";
         src = ./p10k;
         file = "p10k.zsh";
+      }
+      {
+        name = "my-stuff";
+        src = ./my-stuff;
+        file = "my-stuff.zsh";
       }
     ];
 

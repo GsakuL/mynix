@@ -42,6 +42,7 @@
     uid = 1000;
     isNormalUser = true;
     initialPassword = "pw123";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -68,6 +69,7 @@
 
   #services.colord.enable = true;
 
+  programs.zsh.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
