@@ -1,39 +1,39 @@
-{ config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
-  val = v: { Value = v; };
-  valLock = v: {
-    Value = v;
-    Status = "locked";
-  };
-
-  lock-false = valLock false;
-  lock-true = valLock true;
-
-  defaultSettings = {
-    "browser.uidensity" = valLock 1;
-    "extensions.pocket.enabled" = lock-false;
-    "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-    "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-    "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-    "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = lock-false;
-    "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-  };
+  policies = builtins.import ./firefox-policies.nix;
+  myBookmarks = builtins.import ./firefox-bookmarks.nix;
 in
 {
   programs.firefox = {
+    package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
     enable = true;
+    policies = policies.defaultPolicies;
     profiles = {
-      "default" = {
+      default = {
         name = "default";
-        id = 1;
+        id = 0;
         isDefault = true;
-        settings = defaultSettings;
+        settings = policies.defaultSettings;
+        bookmarks = myBookmarks;
+        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          ublock-origin
+          sponsorblock
+          darkreader
+          keepassxc-browser
+          sponsorblock
+          auto-tab-discard
+          return-youtube-dislikes
+        ];
       };
-      "Arbeit" = {
+      work = {
         name = "Arbeit";
-        id = 2;
-        isDefault = false;
-        settings = defaultSettings;
+        id = 1;
+        settings = policies.defaultSettings;
       };
     };
   };

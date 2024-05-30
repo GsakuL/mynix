@@ -47,10 +47,6 @@
       "networkmanager"
       "wheel"
     ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      #    firefox
-      #   tree
-    ];
   };
 
   programs = {
@@ -69,6 +65,11 @@
 
   #services.colord.enable = true;
 
+  programs.firefox.languagePacks = [
+    "de"
+    "en-US"
+  ];
+
   programs.zsh.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -76,7 +77,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
-    firefox
     dnsutils
     dig
     gparted
