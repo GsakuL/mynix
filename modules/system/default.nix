@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,9 @@
     ./fonts.nix
     ./locale.nix
     ./networking.nix
+    ./peripherals.nix
     ./sound.nix
   ];
+
+  environment.systemPackages = with pkgs; [ usbutils ];
 }
