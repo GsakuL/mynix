@@ -1,5 +1,4 @@
 let
-  val = v: { Value = v; };
   valLock = v: {
     Value = v;
     Status = "locked";
@@ -34,15 +33,21 @@ in
     Preferences = {
       "browser.uidensity" = valLock 1;
       "widget.gtk.non-native-titlebar-buttons.enabled" = lock-false;
+
+      # might show checkbox, but can't save changes, still locked
       "browser.tabs.warnOnClose" = lock-true;
       "browser.tabs.warnOnCloseOtherTabs" = lock-true;
+      "browser.sessionstore.warnOnQuit" = lock-true;
+      "browser.warnOnQuit" = lock-true;
+      "browser.warnOnQuitShortcut" = lock-true;
+
       "browser.startup.page" = valLock 3; # tabs and windows from previus session
       "media.autoplay.enabled" = valDefault false;
       "media.eme.enabled" = valDefault true;
 
       "extensions.pocket.enabled" = lock-false;
       "browser.download.useDownloadDir" = lock-false; # always ask
-      "browser.download.always_ask_before_handling_new_types" = valDefault true;
+      "browser.download.always_ask_before_handling_new_types" = lock-true;
       "browser.newtabpage.activity-stream.showSponsored" = lock-false;
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
@@ -54,5 +59,7 @@ in
     "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
     "urlclassifier.trackingSkipURLs" = "*.reddit.com, *.twitter.com, *.x.com, *.twimg.com, *.tiktok.com";
     "urlclassifier.features.socialtracking.skipURLs" = "*.instagram.com, *.twitter.com, *.x.com, *.twimg.com";
+
+    "privacy.trackingprotection.socialtracking.enabled" = true;
   };
 }
