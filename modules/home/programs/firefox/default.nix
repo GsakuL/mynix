@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 let
-  policies = builtins.import ./firefox-policies.nix;
-  myBookmarks = builtins.import ./firefox-bookmarks.nix;
+  policies = builtins.import ./policies.nix;
+  myBookmarks = builtins.import ./bookmarks.nix;
 in
 {
   programs.firefox = {

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./firefox.nix
+    ./firefox
     ./games.nix
     ./git.nix
     ./vscode.nix
