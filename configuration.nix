@@ -82,7 +82,6 @@
     gparted
     ntfs3g
     (citrix_workspace.override { })
-    gedit
   ];
 
   home-manager = {

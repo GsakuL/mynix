@@ -30,11 +30,14 @@
     keepassxc
     ungoogled-chromium
 
+    vlc
+
     xwaylandvideobridge
     btop
     neofetch
     powershell
 
+    kate
     krita
     libreoffice
     hunspell
@@ -44,6 +47,9 @@
 
     p7zip
     pxz
+    file
+    tree
+    bat
 
     plasma-applet-caffeine-plus
     caffeine-ng
