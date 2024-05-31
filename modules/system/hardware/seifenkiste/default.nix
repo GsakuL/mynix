@@ -13,6 +13,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     ./filesystems.nix
     ./graphics.nix
+    ./motherboard.nix
   ];
 
   boot.initrd.availableKernelModules = [
