@@ -9,7 +9,7 @@
     ./locale.nix
     ./networking.nix
     ./peripherals.nix
-    ./sound.nix
+    ./sound
   ];
 
   environment.systemPackages = with pkgs; [ usbutils ];
