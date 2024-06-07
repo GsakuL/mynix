@@ -12,5 +12,10 @@
     ./sound
   ];
 
+  programs.streamdeck-ui = {
+    enable = true;
+    autoStart = true;
+  };
+
   environment.systemPackages = with pkgs; [ usbutils ];
 }

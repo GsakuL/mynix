@@ -23,6 +23,14 @@
           inherit inputs;
         };
         modules = [
+          (
+            { config, pkgs, ... }:
+            {
+              nixpkgs.overlays = [
+                (import ./overlays/streamdeck)
+              ];
+            }
+          )
           ./configuration.nix
           # inputs.home-manager.nixosModules.default
         ];

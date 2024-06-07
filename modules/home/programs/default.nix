@@ -20,6 +20,15 @@
     enable = true;
   };
 
+  home.file."icons/material" = {
+    source = pkgs.fetchFromGitHub {
+      owner = "google";
+      repo = "material-design-icons";
+      rev = "4.0.0";
+      sha256 = "0c8ah9rj82a1y0jgi5j0hszn7ndv4jb5kxmikv71alqq69xd8zn1";
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
