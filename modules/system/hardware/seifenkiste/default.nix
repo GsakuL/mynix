@@ -16,6 +16,9 @@
     ./motherboard.nix
   ];
 
+  # Windows DualBoot
+  time.hardwareClockInLocalTime = true;
+
   boot.initrd.availableKernelModules = [
     "nvme"
     "ahci"
