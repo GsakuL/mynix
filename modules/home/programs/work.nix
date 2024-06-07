@@ -2,8 +2,14 @@
 
 {
   home.activation = {
-    fixCitrix = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      [ -f "$HOME/.ICAClient/wfclient.ini" ] && run sed -i -E 's/^MouseSendsControlV=(True|\*)?$/MouseSendsControlV=False/' "$HOME/.ICAClient/wfclient.ini"
+    fixCitrix = lib.hm.dag.entryAfter [ "installPackages" ] ''
+      ini="$HOME/.ICAClient/wfclient.ini"
+      if [ -f "$ini" ]
+      then
+        run ${lib.getExe' pkgs.crudini "crudini"} \
+          --set "$ini" WFClient DPIMatchingEnabled 1 \
+          --set "$ini" WFClient MouseSendsControlV False
+      fi
     '';
   };
 
