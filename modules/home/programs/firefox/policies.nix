@@ -41,6 +41,8 @@ in
       "browser.warnOnQuit" = lock-true;
       "browser.warnOnQuitShortcut" = lock-true;
 
+      "layout.testing.overlay-scrollbars.always-visible" = lock-true;
+
       "browser.startup.page" = valLock 3; # tabs and windows from previus session
       "media.autoplay.enabled" = valDefault false;
       "media.eme.enabled" = valDefault true;

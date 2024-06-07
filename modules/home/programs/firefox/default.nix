@@ -23,12 +23,16 @@ in
           sponsorblock
           auto-tab-discard
           return-youtube-dislikes
+          stylus
+          noscript
+          violentmonkey
         ];
       };
       work = {
         name = "Arbeit";
         id = 1;
         settings = policies.defaultSettings;
+        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [ violentmonkey ];
       };
     };
   };
