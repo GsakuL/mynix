@@ -6,7 +6,7 @@
     ./games.nix
     ./git.nix
     ./vscode.nix
-    ./zsh
+    ./shells/zsh
     ./work.nix
   ];
 

@@ -25,17 +25,7 @@ in
       grep = "grep --color=auto";
     };
 
-    initExtra = ''
-      source $HOME/${zshDotDir}/plugins/my-stuff/my-stuff.zsh
-    '';
-
-    plugins = [
-      {
-        name = "my-stuff";
-        src = ./my-stuff;
-        file = "my-stuff.zsh";
-      }
-    ];
+    initExtra = builtins.readFile ./initExtra.zsh;
 
     zplug = {
       enable = true;
@@ -47,6 +37,6 @@ in
 
   programs.oh-my-posh = {
     enable = true;
-    settings = builtins.fromTOML (builtins.readFile ../shells/ohmyposh/config.toml);
+    settings = builtins.fromTOML (builtins.readFile ../ohmyposh/config.toml);
   };
 }
