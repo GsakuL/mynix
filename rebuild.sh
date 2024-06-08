@@ -2,12 +2,11 @@
 set -e
 pushd ~/mynix
 
-nixfmt .
+nixfmt --check .
 
 sudo nixos-rebuild switch --flake .
 
-gen_profile=$(readlink "$(readlink ~/.nix-profile)" |  sed 's/-link$//')
-gen_system=$(readlink /nix/var/nix/profiles/system | sed 's/-link$//')
-
-git commit -am "$gen_system $gen_profile"
+gen="$(./latest_gen.sh | sed -e s/-link$// | tr '\n' ' ' | xargs)"
+echo "$gen"
+git commit -am "$gen"
 popd
