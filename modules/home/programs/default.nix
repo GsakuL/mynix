@@ -5,6 +5,7 @@
     ./firefox
     ./games.nix
     ./git.nix
+    ./terminals/kitty
     ./vscode.nix
     ./shells/zsh
     ./work.nix
