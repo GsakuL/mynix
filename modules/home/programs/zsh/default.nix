@@ -21,26 +21,15 @@ in
 
     shellAliases = {
       ll = "ls -l";
-      ls = "ls --color=auto";
+      ls = "ls --color=auto --hyperlink=auto";
       grep = "grep --color=auto";
     };
 
     initExtra = ''
-      source $HOME/${zshDotDir}/plugins/powerlevel10k-config/.p10k.zsh
       source $HOME/${zshDotDir}/plugins/my-stuff/my-stuff.zsh
     '';
 
     plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
-        src = ./p10k;
-        file = "p10k.zsh";
-      }
       {
         name = "my-stuff";
         src = ./my-stuff;
@@ -52,8 +41,12 @@ in
       enable = true;
       plugins = [
         { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        #        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
       ];
     };
+  };
+
+  programs.oh-my-posh = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ../shells/ohmyposh/config.toml);
   };
 }

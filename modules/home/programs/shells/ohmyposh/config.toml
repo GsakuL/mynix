@@ -1,0 +1,127 @@
+'$schema' = 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json'
+final_space = true
+version = 2
+disable_notice = true
+
+[palette]
+git_green = 'green'
+git_red = 'red'
+git_yellow = 'yellow'
+git_cyan = 'cyan'
+gray = 'darkGray'
+
+[var.icons]
+windows = "\ue70f"
+oct_chevron_right = "\uf460"
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+overflow = 'hide'
+
+  [[blocks.segments]]
+  type = 'executiontime'
+  style = 'plain'
+  foreground = 'lightYellow'
+  background = 'transparent'
+  template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+    threshold = 500
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+  type = "session"
+  style = "plain"
+  foreground = 'lightYellow'
+  background = 'transparent'
+  template = """
+    {{- $ssh := ternary " " "" .SSHSession }}
+    {{- $tmux := ternary " " "" ( not ( empty (
+        or
+      (.Env.TMUX)
+      (eq ((or .Env.TERM "") | lower) "tmux" "screen" "screen.xterm-256color")
+      (eq ((or .Env.TERM_PROGRAM "") | lower) "tmux" "screen" "screen.xterm-256color")
+    )) ) }}
+    {{- $nixShell := ternary " " "" (not (empty .Env.IN_NIX_SHELL)) }}
+    {{- if or $ssh $tmux $nixShell }}{{ $ssh }}{{ $tmux }}{{ $nixShell }}<darkGray>❯ </>{{ end }}"""
+
+  [[blocks.segments]]
+  type = 'os'
+  style = 'plain'
+  template = '{{ if .WSL }}{{.Var.icons.windows}} {{.Var.icons.oct_chevron_right}} {{ end }}{{.Icon}} '
+    [blocks.segments.properties]
+    windows = "\ue70f"
+
+  [[blocks.segments]]
+  style = 'plain'
+  type = 'path'
+  foreground = 'cyan'
+  template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+    style = 'full'
+
+  [[blocks.segments]]
+  type = 'git'
+  style = 'plain'
+  foreground = 'default'
+  background = 'transparent'
+  template = """
+    {{- " " }}<p:gray>git[</>{{ .HEAD }}
+    {{- "" }}<p:git_yellow>
+    {{- "" }}{{ if .Merge }}  {{ end }}
+    {{- "" }}{{ if .Rebase }}  {{ end }}
+    {{- "" }}{{ if .CherryPick }} 󰛢 {{ end }}
+    {{- "" }}</>
+    {{- " " }}<p:git_green>{{.Staging.String}}</>
+    {{- "" }}{{ if and (.Staging.Changed) (.Working.Changed) }}<p:gray>|</>{{ end }}
+    {{- "" }}<p:git_red>{{.Working.String}}</>
+    {{- "" }}{{ if and (gt .Behind 0) (gt .Ahead 0) }}<p:git_yellow>{{ else }}<p:git_cyan>{{ end }}
+    {{- " " }}{{ if gt .Behind 0 }}󰄼{{ .Behind }}{{ end }}
+    {{- "" }}{{ if and (gt .Behind 0) (gt .Ahead 0) }} {{ end }}
+    {{- "" }}{{ if gt .Ahead 0 }}󰄿{{ .Ahead }}{{ end }}
+    {{- "" }}</>
+    {{- "" }}<p:gray>]</>"""
+
+    [blocks.segments.properties]
+    branch_icon = ''
+    commit_icon = '@'
+    fetch_status = true
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+  [[blocks.segments]]
+  type = 'root'
+  style = 'plain'
+  foreground = "red"
+
+  [[blocks.segments]]
+  type = 'text'
+  style = 'plain'
+  foreground = 'darkGray'
+  template = '{{if or (gt .SHLVL 1) (eq ((or .Env.TERM_PROGRAM "") | lower) "vscode") }}{{.SHLVL}}{{end}}'
+
+  [[blocks.segments]]
+  type = 'text'
+  style = 'plain'
+  template = '❯'
+  foreground = 'default'
+  foreground_templates = ['{{if ne .Code 0 }}red{{end}}']
+
+[transient_prompt]
+foreground = 'default'
+foreground_templates = ['{{if ne .Code 0}}red{{end}}']
+background = 'transparent'
+template = '❯ '
+
+[secondary_prompt]
+background = 'transparent'
+template = '❯❯ '
