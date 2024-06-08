@@ -10,8 +10,10 @@
   home.packages = with pkgs; [ nixd ];
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       # sohamkamani.code-eol
+      tamasfe.even-better-toml
       eamodio.gitlens
       jnoortheen.nix-ide
       mkhl.direnv
