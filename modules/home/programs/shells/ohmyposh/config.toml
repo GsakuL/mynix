@@ -67,25 +67,37 @@ newline = true
     style = 'full'
 
   [[blocks.segments]]
+  type = "python"
+  style = "plain"
+  foreground = "blue"
+  background = "transparent"
+  template = "  {{ if and .Venv .Env.VIRTUAL_ENV_PROMPT }}{{.Env.VIRTUAL_ENV_PROMPT }}{{end}}{{ .Full }}"
+
+  [[blocks.segments]]
   type = 'git'
   style = 'plain'
   foreground = 'default'
   background = 'transparent'
   template = """
-    {{- " " }}<p:gray>git[</>{{ .HEAD }}
+    {{- "" }} <p:gray>git[</>{{ .HEAD }}
     {{- "" }}<p:git_yellow>
     {{- "" }}{{ if .Merge }}  {{ end }}
     {{- "" }}{{ if .Rebase }}  {{ end }}
     {{- "" }}{{ if .CherryPick }} 󰛢 {{ end }}
     {{- "" }}</>
-    {{- " " }}<p:git_green>{{.Staging.String}}</>
-    {{- "" }}{{ if and (.Staging.Changed) (.Working.Changed) }}<p:gray>|</>{{ end }}
+
+    {{- "" }}{{ if or .Staging.Changed .Working.Changed }} {{ end }}
+    {{- "" }}<p:git_green>{{.Staging.String}}</>
+    {{- "" }}{{ if and .Staging.Changed .Working.Changed }}<p:gray>|</>{{ end }}
     {{- "" }}<p:git_red>{{.Working.String}}</>
-    {{- "" }}{{ if and (gt .Behind 0) (gt .Ahead 0) }}<p:git_yellow>{{ else }}<p:git_cyan>{{ end }}
-    {{- " " }}{{ if gt .Behind 0 }}󰄼{{ .Behind }}{{ end }}
-    {{- "" }}{{ if and (gt .Behind 0) (gt .Ahead 0) }} {{ end }}
-    {{- "" }}{{ if gt .Ahead 0 }}󰄿{{ .Ahead }}{{ end }}
+
+    {{- "" }}{{ if or .Behind .Ahead }} {{ end }}
+    {{- "" }}{{ if and .Behind .Ahead }}<p:git_yellow>{{ else }}<p:git_cyan>{{ end }}
+    {{- "" }}{{ if .Behind }}󰄼{{ .Behind }}{{ end }}
+    {{- "" }}{{ if and .Behind .Ahead }} {{ end }}
+    {{- "" }}{{ if .Ahead }}󰄿{{ .Ahead }}{{ end }}
     {{- "" }}</>
+
     {{- "" }}<p:gray>]</>"""
 
     [blocks.segments.properties]
