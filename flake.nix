@@ -29,6 +29,7 @@
             {
               nixpkgs.overlays = [
                 (import ./overlays/streamdeck)
+                (import ./overlays/chromium-wallet.nix)
               ];
             }
           )
