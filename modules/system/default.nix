@@ -9,6 +9,7 @@
     ./fonts.nix
     ./locale.nix
     ./networking.nix
+    ./obs-studio.nix
     ./peripherals.nix
     ./sound
   ];

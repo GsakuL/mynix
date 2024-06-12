@@ -6,6 +6,7 @@
     ./games.nix
     ./git.nix
     ./terminals/kitty
+    ./obs-studio.nix
     ./vscode.nix
     ./shells/zsh
     ./work.nix
