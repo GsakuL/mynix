@@ -5,6 +5,7 @@
     ./hardware/seifenkiste
 
     ./bluetooth.nix
+    ./docker.nix
     ./fonts.nix
     ./locale.nix
     ./networking.nix
