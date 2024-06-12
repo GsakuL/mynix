@@ -3,3 +3,12 @@
   - Settings JSON
   - API Key
 - set "x11 legacy"/"keylogging" in Plasma to "when one of those is modifier key"
+
+# TODO
+- (ungoogled-)chromium vs firefox: media controls
+  - start firefox with video, and pause/stop
+  - start chromium with video: no controls for chrome
+  - stop pause/chrome video
+  - ???
+  - start video in firefox
+  - chrome hass controls
