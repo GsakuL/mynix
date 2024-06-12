@@ -1,17 +1,3 @@
-let
-  valLock = v: {
-    Value = v;
-    Status = "locked";
-  };
-  valDefault = v: {
-    Value = v;
-    # Read/Write: Settings appear as default even if factory default differs.
-    Status = "default";
-  };
-
-  lock-false = valLock false;
-  lock-true = valLock true;
-in
 {
   # https://mozilla.github.io/policy-templates/
   defaultPolicies = {
@@ -30,33 +16,48 @@ in
       EmailTracking = true;
     };
     DisablePocket = true;
-    Preferences = {
-      "browser.uidensity" = valLock 1;
-      "widget.gtk.non-native-titlebar-buttons.enabled" = lock-false;
+    Preferences =
+      let
+        valLock = v: {
+          Value = v;
+          Status = "locked";
+        };
+        valDefault = v: {
+          Value = v;
+          # Read/Write: Settings appear as default even if factory default differs.
+          Status = "default";
+        };
 
-      # might show checkbox, but can't save changes, still locked
-      "browser.tabs.warnOnClose" = lock-true;
-      "browser.tabs.warnOnCloseOtherTabs" = lock-true;
-      "browser.sessionstore.warnOnQuit" = lock-true;
-      "browser.warnOnQuit" = lock-true;
-      "browser.warnOnQuitShortcut" = lock-true;
+        lock-false = valLock false;
+        lock-true = valLock true;
+      in
+      {
+        "browser.uidensity" = valLock 1;
+        "widget.gtk.non-native-titlebar-buttons.enabled" = lock-false;
 
-      "browser.fixup.alternate.enabled" = lock-false; # Don't try to guess domain names when entering an invalid domain name in URL bar
-      "layout.testing.overlay-scrollbars.always-visible" = lock-true;
+        # might show checkbox, but can't save changes, still locked
+        "browser.tabs.warnOnClose" = lock-true;
+        "browser.tabs.warnOnCloseOtherTabs" = lock-true;
+        "browser.sessionstore.warnOnQuit" = lock-true;
+        "browser.warnOnQuit" = lock-true;
+        "browser.warnOnQuitShortcut" = lock-true;
 
-      "browser.startup.page" = valLock 3; # tabs and windows from previus session
-      "media.autoplay.enabled" = valDefault false;
-      "media.eme.enabled" = valDefault true;
-      "media.autoplay.default" = valDefault 5; # block audio and video by default
+        "browser.fixup.alternate.enabled" = lock-false; # Don't try to guess domain names when entering an invalid domain name in URL bar
+        "layout.testing.overlay-scrollbars.always-visible" = lock-true;
 
-      "browser.pocket.enabled" = lock-false;
-      "extensions.pocket.enabled" = lock-false;
-      "browser.download.useDownloadDir" = lock-false; # always ask
-      "browser.download.always_ask_before_handling_new_types" = lock-true;
-      "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-      "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-      "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-    };
+        "browser.startup.page" = valLock 3; # tabs and windows from previus session
+        "media.autoplay.enabled" = valDefault false;
+        "media.eme.enabled" = valDefault true;
+        "media.autoplay.default" = valDefault 5; # block audio and video by default
+
+        "browser.pocket.enabled" = lock-false;
+        "extensions.pocket.enabled" = lock-false;
+        "browser.download.useDownloadDir" = lock-false; # always ask
+        "browser.download.always_ask_before_handling_new_types" = lock-true;
+        "browser.newtabpage.activity-stream.showSponsored" = lock-false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+        "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
+      };
   };
   defaultSettings = {
     "pocket.enabled" = false;
