@@ -93,6 +93,8 @@
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
+      inherit pkgs;
+      system-config = config;
     };
     users = {
       "lukas" = import ./home.nix;

@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  system-config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.mangohud = {
@@ -16,7 +21,7 @@
     protonup-qt
   ];
 
-  home.sessionVariables = {
-    "STEAM_FORCE_DESKTOPUI_SCALING" = "1.5";
+  home.sessionVariables = lib.optionalAttrs system-config.programs.steam.enable {
+    STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
   };
 }
