@@ -41,12 +41,15 @@ in
       "browser.warnOnQuit" = lock-true;
       "browser.warnOnQuitShortcut" = lock-true;
 
+      "browser.fixup.alternate.enabled" = lock-false; # Don't try to guess domain names when entering an invalid domain name in URL bar
       "layout.testing.overlay-scrollbars.always-visible" = lock-true;
 
       "browser.startup.page" = valLock 3; # tabs and windows from previus session
       "media.autoplay.enabled" = valDefault false;
       "media.eme.enabled" = valDefault true;
+      "media.autoplay.default" = valDefault 5; # block audio and video by default
 
+      "browser.pocket.enabled" = lock-false;
       "extensions.pocket.enabled" = lock-false;
       "browser.download.useDownloadDir" = lock-false; # always ask
       "browser.download.always_ask_before_handling_new_types" = lock-true;
@@ -56,6 +59,14 @@ in
     };
   };
   defaultSettings = {
+    "pocket.enabled" = false;
+
+    "toolkit.telemetry.enabled" = false;
+    "toolkit.telemetry.unified" = false;
+    "toolkit.telemetry.server" = "data:=";
+    "toolkit.telemetry.archive.enabled" = false;
+    "toolkit.telemetry.reportingpolicy.firstRun" = false;
+
     "font.name.serif.x-western" = "sans-serif";
     "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = false;
     "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
