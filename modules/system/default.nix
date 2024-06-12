@@ -18,5 +18,14 @@
     autoStart = true;
   };
 
-  environment.systemPackages = with pkgs; [ usbutils ];
+  environment.systemPackages = with pkgs; [
+    file
+    tree
+    bat
+    nixfmt-rfc-style
+    yj
+    jq
+
+    usbutils
+  ];
 }

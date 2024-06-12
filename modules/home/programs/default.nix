@@ -57,15 +57,9 @@
 
     p7zip
     pxz
-    file
-    tree
-    bat
 
     plasma-applet-caffeine-plus
     caffeine-ng
-
-    nixfmt-rfc-style
-
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
