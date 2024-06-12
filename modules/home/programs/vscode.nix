@@ -17,6 +17,11 @@
       eamodio.gitlens
       jnoortheen.nix-ide
       mkhl.direnv
+
+      ms-python.python
+      ms-python.vscode-pylance
+      ms-python.debugpy
+      wholroyd.jinja
     ];
   };
   home.sessionVariables = {
