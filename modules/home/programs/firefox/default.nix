@@ -16,6 +16,9 @@ in
         settings = policies.defaultSettings;
         bookmarks = myBookmarks;
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          deutsch-de-language-pack
+          dictionary-german
+
           ublock-origin
           sponsorblock
           darkreader
@@ -26,6 +29,7 @@ in
           stylus
           noscript
           violentmonkey
+          indie-wiki-buddy
         ];
       };
       work = {

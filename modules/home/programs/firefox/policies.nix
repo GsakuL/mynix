@@ -29,8 +29,12 @@
         };
       in
       {
+        "browser.aboutConfig.showWarning" = lock false;
         "browser.uidensity" = lock 1;
         "widget.gtk.non-native-titlebar-buttons.enabled" = lock false;
+        "widget.gtk.overlay-scrollbars.enabled" = lock false;
+        "widget.non-native-theme.gtk.scrollbar.thumb-size" = lock 1;
+        "widget.non-native-theme.scrollbar.size.override" = lock 12;
 
         # might show checkbox, but can't save changes, still locked
         "browser.tabs.warnOnClose" = lock true;
@@ -54,6 +58,9 @@
         "browser.newtabpage.activity-stream.showSponsored" = lock false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock false;
         "browser.newtabpage.activity-stream.system.showSponsored" = lock false;
+        "browser.newtabpage.activity-stream.default.sites" = default "";
+        "browser.newtabpage.activity-stream.feeds.telemetry" = lock false;
+        "browser.newtabpage.activity-stream.feeds.system.topstories" = lock false;
       };
   };
   defaultSettings = {
