@@ -27,10 +27,7 @@
           (
             { config, pkgs, ... }:
             {
-              nixpkgs.overlays = [
-                (import ./overlays/streamdeck)
-                (import ./overlays/chromium-wallet.nix)
-              ];
+              nixpkgs.overlays = [ (import ./overlays/chromium-wallet.nix) ];
             }
           )
           ./configuration.nix

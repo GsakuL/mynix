@@ -14,10 +14,7 @@
     ./sound
   ];
 
-  programs.streamdeck-ui = {
-    enable = true;
-    autoStart = true;
-  };
+  services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
     file
