@@ -27,7 +27,10 @@
           (
             { config, pkgs, ... }:
             {
-              nixpkgs.overlays = [ (import ./overlays/chromium-wallet.nix) ];
+              nixpkgs.overlays = [
+                (import ./overlays/chromium-wallet.nix)
+                (import ./overlays/citrix-fixes.nix { inherit config; })
+              ];
             }
           )
           ./configuration.nix
