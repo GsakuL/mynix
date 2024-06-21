@@ -27,6 +27,12 @@
     enable = true;
   };
 
+  programs.chromium = {
+    enable = true;
+    package = pkgs.ungoogled-chromium;
+    commandLineArgs = [ "--password-store=basic" ];
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages =
@@ -36,7 +42,6 @@
       telegram-desktop
       discord
       keepassxc
-      ungoogled-chromium
 
       vlc
 

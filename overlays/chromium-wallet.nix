@@ -19,5 +19,4 @@ in
     "$out/bin/discord"
     "$out/bin/Discord"
   ];
-  ungoogled-chromium = mkWrap "ungoogled-chromium" "$out/bin/chromium";
 }
