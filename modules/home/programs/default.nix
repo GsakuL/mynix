@@ -10,6 +10,7 @@
     ./firefox
     ./games.nix
     ./git.nix
+    ./media
     ./terminals/kitty
     ./obs-studio.nix
     ./vscode.nix
@@ -42,8 +43,6 @@
       telegram-desktop
       discord
       keepassxc
-
-      vlc
 
       xwaylandvideobridge
       btop
