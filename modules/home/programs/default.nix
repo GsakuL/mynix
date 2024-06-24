@@ -13,7 +13,7 @@
     ./media
     ./terminals/kitty
     ./obs-studio.nix
-    ./vscode.nix
+    ./vscode
     ./shells/zsh
     ./work.nix
   ];
