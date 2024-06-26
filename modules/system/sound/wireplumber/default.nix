@@ -5,7 +5,7 @@
     let
       confs = [
         "70-bluez-props-no-headset"
-        # "70-bluez-rules-no-headset"
+        "70-bluez-rules-no-headset"
         "70-no-headset"
         "70-no-webcam-mic"
       ];
