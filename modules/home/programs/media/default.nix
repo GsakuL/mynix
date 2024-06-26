@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Bluetooth Media Controls
@@ -36,5 +41,14 @@
         ffmpegSupport = true;
         ffmpeg = pkgs.ffmpeg-full;
       })
-    ];
+    ]
+    ++ (lib.optionals config.programs.mpv.enable [
+      (pkgs.writeShellScriptBin "mpv-bare" ''
+        ${lib.getExe pkgs.mpv} "$@"
+      '')
+
+      (pkgs.writeShellScriptBin "mpv-gui" ''
+        mpv --player-operation-mode=pseudo-gui "$@"
+      '')
+    ]);
 }
