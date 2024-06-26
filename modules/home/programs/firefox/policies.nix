@@ -79,5 +79,9 @@
     "urlclassifier.features.socialtracking.skipURLs" = "*.instagram.com, *.twitter.com, *.x.com, *.twimg.com";
 
     "privacy.trackingprotection.socialtracking.enabled" = true;
+
+    "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+    "browser.theme.content-theme" = 0;
+    "browser.theme.toolbar-theme" = 0;
   };
 }

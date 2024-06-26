@@ -1,4 +1,7 @@
 user_pref("_user.js.parrot", "START fromSettings");
+user_pref("browser.theme.content-theme", 0);
+user_pref("browser.theme.toolbar-theme", 0);
+user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 user_pref("font.name.serif.x-western", "sans-serif");
 user_pref("pocket.enabled", false);
 user_pref("privacy.trackingprotection.socialtracking.enabled", true);

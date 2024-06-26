@@ -16,7 +16,6 @@ in
         settings = policies.defaultSettings;
         bookmarks = myBookmarks;
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
-          deutsch-de-language-pack
           dictionary-german
 
           ublock-origin
@@ -35,7 +34,11 @@ in
       work = {
         name = "Arbeit";
         id = 1;
-        settings = policies.defaultSettings;
+        settings = policies.defaultSettings // {
+          "extensions.activeThemeID" = "firefox-compact-light@mozilla.org";
+          "browser.theme.content-theme" = 1;
+          "browser.theme.toolbar-theme" = 1;
+        };
         extensions = with inputs.firefox-addons.packages."x86_64-linux"; [ violentmonkey ];
       };
     };
