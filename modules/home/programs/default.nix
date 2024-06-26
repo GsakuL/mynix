@@ -46,7 +46,7 @@
 
       xwaylandvideobridge
       btop
-      neofetch
+      fastfetch
       powershell
 
       kate
