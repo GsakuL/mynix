@@ -44,6 +44,12 @@
       discord
       keepassxc
 
+      kdePackages.kalgebra
+      kdePackages.kcalc
+      calc
+      rink
+      kalker
+
       xwaylandvideobridge
       btop
       fastfetch
