@@ -116,4 +116,17 @@ in
       }
     ];
   }
+  {
+    name = "3D Print";
+    bookmarks = [
+      {
+        name = "Thingiverse";
+        url = "https://www.thingiverse.com";
+      }
+      {
+        name = "Printables";
+        url = "https://www.printables.com";
+      }
+    ];
+  }
 ]
