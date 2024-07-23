@@ -4,7 +4,14 @@
   lib,
   ...
 }:
-
+let
+  mkMpv =
+    { scripts ? [] }:
+    pkgs.mpv-unwrapped.wrapper {
+      mpv = pkgs.mpv-unwrapped.override { ffmpeg = pkgs.ffmpeg-full; };
+      scripts = scripts;
+    };
+in
 {
   # Bluetooth Media Controls
   services.mpris-proxy.enable = false;
@@ -13,11 +20,13 @@
 
   programs.mpv = {
     enable = true;
-    scripts = with pkgs.mpvScripts; [
-      mpris
-      thumbfast
-      modernx
-    ];
+    package = mkMpv {
+      scripts = with pkgs.mpvScripts; [
+        mpris
+        thumbfast
+        modernx
+      ];
+    };
   };
 
   home.packages =
@@ -44,7 +53,7 @@
     ]
     ++ (lib.optionals config.programs.mpv.enable [
       (pkgs.writeShellScriptBin "mpv-bare" ''
-        ${lib.getExe pkgs.mpv} "$@"
+        ${lib.getExe (mkMpv { })} "$@"
       '')
 
       (pkgs.writeShellScriptBin "mpv-gui" ''
