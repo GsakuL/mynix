@@ -57,6 +57,18 @@ in
           (volumeBoost 10)
         ];
       }
+      {
+        name = "Old Reddit";
+        url = ''
+          javascript:(function()
+          {
+            ['https://www.reddit.com', 'https://reddit.com'].some(function(p)
+            {
+              if (window.location.href.startsWith(p))
+              { window.location.href = 'https://old.reddit.com' + window.location.href.slice(p.length); return true }
+            })
+          })()'';
+      }
     ];
   }
 
