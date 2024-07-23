@@ -24,10 +24,12 @@ in
         ms-python.vscode-pylance
         ms-python.debugpy
         wholroyd.jinja
+        streetsidesoftware.code-spell-checker
       ])
       ++ (with from-marketplace; [
         medo64__render-crlf
         janisdd__vscode-edit-csv
+        streetsidesoftware__code-spell-checker-german
       ]);
   };
   home.sessionVariables = {
