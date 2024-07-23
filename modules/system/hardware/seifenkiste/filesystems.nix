@@ -1,6 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [ ntfs3g ];
+  services.fstrim.enable = true;
   boot.supportedFilesystems = [ "ntfs" ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

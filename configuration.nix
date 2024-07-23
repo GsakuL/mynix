@@ -84,7 +84,6 @@
     dnsutils
     dig
     gparted
-    ntfs3g
     citrix_workspace
   ];
 
