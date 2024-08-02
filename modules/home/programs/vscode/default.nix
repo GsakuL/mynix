@@ -30,13 +30,19 @@ in
         m.medo64__render-crlf
 
         # spelling
-        p.streetsidesoftware.code-spell-checker
-        m.streetsidesoftware__code-spell-checker-german
+        [
+          p.streetsidesoftware.code-spell-checker
+          m.streetsidesoftware__code-spell-checker-german
+        ]
 
         # python
-        p.ms-python.python
-        p.ms-python.vscode-pylance
-        p.ms-python.debugpy
+        [
+          p.ms-python.python
+          [
+            p.ms-python.vscode-pylance
+            p.ms-python.debugpy
+          ]
+        ]
         p.wholroyd.jinja
 
         # c/c++
