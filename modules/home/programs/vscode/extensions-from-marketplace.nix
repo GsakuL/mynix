@@ -9,6 +9,15 @@ let
 
   mkExtensionList = (defs: builtins.listToAttrs (extDefToAttrs defs));
 in
+/*
+  {
+    # https://marketplace.visualstudio.com/items?itemName=
+    publisher = "";
+    name = "";
+    version = "";
+    hash = "";
+  }
+*/
 mkExtensionList [
   {
     # https://marketplace.visualstudio.com/items?itemName=sohamkamani.code-eol
