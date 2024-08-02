@@ -14,23 +14,31 @@ in
     enable = true;
     mutableExtensionsDir = false;
     extensions =
-      (with pkgs.vscode-extensions; [
-        tamasfe.even-better-toml
-        eamodio.gitlens
-        jnoortheen.nix-ide
-        mkhl.direnv
+      let
+        p = pkgs.vscode-extensions;
+        m = from-marketplace;
+      in
+      [
+        # files / misc langs
+        p.tamasfe.even-better-toml
+        p.jnoortheen.nix-ide
+        m.janisdd__vscode-edit-csv
 
-        ms-python.python
-        ms-python.vscode-pylance
-        ms-python.debugpy
-        wholroyd.jinja
-        streetsidesoftware.code-spell-checker
-      ])
-      ++ (with from-marketplace; [
-        medo64__render-crlf
-        janisdd__vscode-edit-csv
-        streetsidesoftware__code-spell-checker-german
-      ]);
+        # utils
+        p.eamodio.gitlens
+        p.mkhl.direnv
+        m.medo64__render-crlf
+
+        # spelling
+        p.streetsidesoftware.code-spell-checker
+        m.streetsidesoftware__code-spell-checker-german
+
+        # python
+        p.ms-python.python
+        p.ms-python.vscode-pylance
+        p.ms-python.debugpy
+        p.wholroyd.jinja
+      ];
   };
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
