@@ -28,6 +28,15 @@
     enable = true;
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.poetry = {
+    enable = true;
+  };
+
   programs.chromium = {
     enable = true;
     package = pkgs.ungoogled-chromium;
@@ -68,6 +77,10 @@
 
       plasma-applet-caffeine-plus
       caffeine-ng
+
+      openscad-unstable
+
+      thonny
     ])
     ++ lib.optional system-config.services.flatpak.enable pkgs.kdePackages.discover;
 }

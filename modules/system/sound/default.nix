@@ -15,6 +15,10 @@
       enable = true;
     };
   };
+  programs.noisetorch.enable = true;
+  environment.systemPackages = with pkgs; [
+    jamesdsp
 
-  environment.systemPackages = with pkgs; [ qpwgraph ];
+    qpwgraph
+  ];
 }

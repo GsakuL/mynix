@@ -27,6 +27,11 @@ in
 
   services.flatpak.enable = true;
 
+  programs.ausweisapp = {
+    enable = true;
+    openFirewall = true;
+  };
+
   environment.systemPackages =
     (with pkgs; [
       file
