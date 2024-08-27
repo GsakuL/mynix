@@ -25,6 +25,10 @@ in
       grep = "grep --color=auto";
     };
 
+    localVariables = {
+      PROMPT_EOL_MARK = "";
+    };
+
     initExtra = builtins.readFile ./initExtra.zsh;
 
     zplug = {
