@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fdmmaterial version="1.3" xmlns="http://www.ultimaker.com/material" xmlns:cura="http://www.ultimaker.com/cura">
+  <metadata>
+    <name>
+      <brand>GEEETECH</brand>
+      <material>PETG</material>
+      <color>Generic</color>
+      <label>PETG</label>
+    </name>
+    <version>8</version>
+    <adhesion_info>prime 8mm/s</adhesion_info>
+    <color_code>#ffae22</color_code>
+    <GUID>532d6d3d-fb6d-4ff2-af56-8da4fd320436</GUID>
+    <description />
+  </metadata>
+  <properties>
+    <diameter>1.75</diameter>
+    <density>1.38</density>
+  </properties>
+  <settings>
+    <setting key="standby temperature">175</setting>
+    <cura:setting key="material_flow_layer_0">91</cura:setting>
+    <setting key="adhesion tendency">0</setting>
+    <setting key="heated bed temperature">84</setting>
+    <setting key="print cooling">0</setting>
+    <setting key="surface energy">100</setting>
+    <cura:setting key="support_material_flow">71</cura:setting>
+    <cura:setting key="adhesion_type">none</cura:setting>
+    <setting key="retraction amount">6</setting>
+    <cura:setting key="material_flow">91</cura:setting>
+    <cura:setting key="speed_print">40</cura:setting>
+    <cura:setting key="line_width">0.48</cura:setting>
+    <setting key="print temperature">230</setting>
+    <cura:setting key="support_interface_material_flow">71</cura:setting>
+    <setting key="build volume temperature">28</setting>
+    <setting key="retraction speed">50</setting>
+    <machine>
+      <machine_identifier manufacturer="Kati Hal ARGE" product="alyanx3dp" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">60</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">1.5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Lotmaxx" product="lotmaxx_sc60" />
+      <setting key="standby temperature">200</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">20</setting>
+      <setting key="retraction amount">7</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="IMADE3D" product="IMADE3D JellyBOX" />
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">20</setting>
+      <setting key="retraction amount">7</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">210</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+      <hotend id="0.4 mm">
+        <setting key="hardware compatible">yes</setting>
+      </hotend>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s5" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10mini" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="BIQU" product="biqu_b1_abl" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">60</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">20</setting>
+      <setting key="retraction amount">7</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">180</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="BIQU" product="biqu_b1" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">60</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">20</setting>
+      <setting key="retraction amount">7</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">180</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_xy2" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_xy3" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Kati Hal ARGE" product="alya3dp" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">60</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">1.5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr20" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s4" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_x5sa_400" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10s" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_x" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_xy2pro" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender3" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_x5sa_500" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Kati Hal ARGE" product="kupido" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">60</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">0.8</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender5" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr10spro" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="CreawsomeMod" product="creality_base" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender2" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Cartesio bv" product="cartesio" />
+      <setting key="standby temperature">160</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">43</setting>
+      <setting key="print cooling">40.0</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">7</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">190</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+      <hotend id="0.25mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+      <hotend id="0.4mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.0</setting>
+      </hotend>
+      <hotend id="0.8mm thermoplastic extruder">
+        <setting key="hardware compatible">yes</setting>
+        <setting key="retraction amount">1.5</setting>
+      </hotend>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_ender4" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_x5sa" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Creality3D" product="creality_cr20pro" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">50</setting>
+      <setting key="print cooling">100</setting>
+      <setting key="retraction speed">45</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+    <machine>
+      <machine_identifier manufacturer="Tronxy" product="tronxy_d01" />
+      <setting key="standby temperature">180</setting>
+      <cura:setting key="material_flow_layer_0">94</cura:setting>
+      <setting key="heated bed temperature">55</setting>
+      <setting key="print cooling">75</setting>
+      <setting key="retraction speed">40</setting>
+      <setting key="retraction amount">5</setting>
+      <cura:setting key="material_flow">91.4</cura:setting>
+      <setting key="print temperature">200</setting>
+      <cura:setting key="speed_layer_0">8</cura:setting>
+    </machine>
+  </settings>
+</fdmmaterial>

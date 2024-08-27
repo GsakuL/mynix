@@ -1,0 +1,13 @@
+ArcWelderPlugin
+AutoTowersGenerator
+BarbarianPlugin
+CalibrationShapes
+CustomJobPrefix
+LinearAdvanceSettingPlugin
+MaterialSettingsPlugin
+MeasureTool
+MeshTools
+PrinterSettingsPlugin
+SettingsGuide2
+StartOptimiser
+ZOffsetPlugin
