@@ -86,6 +86,8 @@ newline = true
     {{- "" }}{{ if .CherryPick }} 󰛢 {{ end }}
     {{- "" }}</>
 
+    {{- "" }}{{ if gt .StashCount 0 }}<p:gray>  {{ .StashCount }}</>{{ end }}
+
     {{- "" }}{{ if or .Staging.Changed .Working.Changed }} {{ end }}
     {{- "" }}<p:git_green>{{.Staging.String}}</>
     {{- "" }}{{ if and .Staging.Changed .Working.Changed }}<p:gray>|</>{{ end }}
