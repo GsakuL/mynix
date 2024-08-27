@@ -21,6 +21,7 @@ in
     ./networking.nix
     ./obs-studio.nix
     ./peripherals.nix
+    ./scanner.nix
     ./sound
   ];
 
