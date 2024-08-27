@@ -10,3 +10,6 @@ self: super: {
       '';
   });
 }
+
+#crudini \
+#  --set "$ICAInstDir/config/module.ini" ClientAudio AudioRedirectionV4 FALSE
