@@ -16,3 +16,6 @@
   - ???
   - start video in firefox
   - chrome hass controls
+
+- citrix only works when starting from browser
+  - glib-networking
