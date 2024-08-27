@@ -6,7 +6,9 @@
 }:
 let
   mkMpv =
-    { scripts ? [] }:
+    {
+      scripts ? [ ],
+    }:
     pkgs.mpv-unwrapped.wrapper {
       mpv = pkgs.mpv-unwrapped.override { ffmpeg = pkgs.ffmpeg-full; };
       scripts = scripts;
@@ -42,13 +44,13 @@ in
       puddletag
       mp3gain
 
-      yt-dlg
+      #yt-dlg # https://github.com/NixOS/nixpkgs/issues/337754
     ])
     ++ [
 
       (pkgs.yt-dlp.override {
         ffmpegSupport = true;
-        ffmpeg = pkgs.ffmpeg-full;
+        ffmpeg-headless = pkgs.ffmpeg-full;
       })
     ]
     ++ (lib.optionals config.programs.mpv.enable [
