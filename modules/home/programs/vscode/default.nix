@@ -24,6 +24,9 @@ in
         p.jnoortheen.nix-ide
         m.janisdd__vscode-edit-csv
 
+        # web
+        p.ms-vscode.live-server
+
         # utils
         p.eamodio.gitlens
         p.mkhl.direnv
