@@ -2,8 +2,10 @@
 let
   policies = builtins.import ./policies.nix;
   myBookmarks = builtins.import ./bookmarks.nix;
+  ffa = inputs.firefox-addons.packages.${pkgs.system};
 in
 {
+  # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
   programs.firefox = {
     package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
     enable = true;
@@ -15,7 +17,7 @@ in
         isDefault = true;
         settings = policies.defaultSettings;
         bookmarks = myBookmarks;
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions = with ffa; [
           dictionary-german
 
           ublock-origin
@@ -29,6 +31,7 @@ in
           noscript
           violentmonkey
           indie-wiki-buddy
+          redirector
         ];
       };
       work = {
@@ -39,7 +42,7 @@ in
           "browser.theme.content-theme" = 1;
           "browser.theme.toolbar-theme" = 1;
         };
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [ violentmonkey ];
+        extensions = with ffa; [ violentmonkey ];
       };
     };
   };
