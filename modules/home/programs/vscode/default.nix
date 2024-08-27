@@ -5,9 +5,7 @@
   inputs,
   ...
 }:
-let
-  from-marketplace = import ./extensions-from-marketplace.nix { inherit pkgs; };
-in
+
 {
   home.packages = with pkgs; [ nixd ];
   programs.vscode = {
@@ -15,14 +13,15 @@ in
     mutableExtensionsDir = false;
     extensions =
       let
-        p = pkgs.vscode-extensions;
-        m = from-marketplace;
+        # p = pkgs.vscode-extensions;
+        p = m;
+        m = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
       in
       lib.lists.flatten [
         # files / misc langs
         p.tamasfe.even-better-toml
         p.jnoortheen.nix-ide
-        m.janisdd__vscode-edit-csv
+        m.janisdd.vscode-edit-csv
 
         # web
         p.ms-vscode.live-server
@@ -30,12 +29,12 @@ in
         # utils
         p.eamodio.gitlens
         p.mkhl.direnv
-        m.medo64__render-crlf
+        m.medo64.render-crlf
 
         # spelling
         [
           p.streetsidesoftware.code-spell-checker
-          m.streetsidesoftware__code-spell-checker-german
+          m.streetsidesoftware.code-spell-checker-german
         ]
 
         # python
@@ -50,29 +49,29 @@ in
 
         # c/c++
         [
-          m.raspberry-pi__raspberry-pi-pico
+          m.raspberry-pi.raspberry-pi-pico
           [
             [
               p.ms-vscode.cpptools-extension-pack
               [
                 p.ms-vscode.cpptools
-                m.ms-vscode__cpptools-themes
+                m.ms-vscode.cpptools-themes
                 [
-                p.ms-vscode.cmake-tools
+                  p.ms-vscode.cmake-tools
                   [ p.twxs.cmake ]
                 ]
               ]
             ]
             [
-              m.marus25__cortex-debug
+              m.marus25.cortex-debug
               [
-                m.mcu-debug__debug-tracker-vscode
-                m.mcu-debug__memory-view
-                m.mcu-debug__rtos-views
-                m.mcu-debug__peripheral-viewer
+                m.mcu-debug.debug-tracker-vscode
+                m.mcu-debug.memory-view
+                m.mcu-debug.rtos-views
+                m.mcu-debug.peripheral-viewer
               ]
             ]
-            m.ms-vscode__vscode-serial-monitor
+            m.ms-vscode.vscode-serial-monitor
           ]
         ]
       ];
