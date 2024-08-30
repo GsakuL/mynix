@@ -46,12 +46,9 @@
     };
     "/media/SPEEEEEEEED" = {
       device = "/dev/disk/by-label/SPEEEEEEEED";
-      fsType = "ntfs-3g";
+      fsType = "ext4";
       options = [
-        "rw"
-        "uid=1000"
-        "gid=1000"
-        "norecover"
+        "defaults"
       ];
     };
   };
