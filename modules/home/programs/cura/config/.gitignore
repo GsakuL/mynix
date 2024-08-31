@@ -1,0 +1,3 @@
+# cura deletes the file and re-creates it. this is a hack, to get the config-file into git
+/cura_config
+!/cura_config/cura.cfg
