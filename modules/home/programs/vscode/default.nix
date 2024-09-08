@@ -13,7 +13,7 @@
     mutableExtensionsDir = false;
     extensions =
       let
-        # p = pkgs.vscode-extensions;
+        n = pkgs.vscode-extensions;
         p = m;
         m = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
       in
@@ -54,7 +54,7 @@
             [
               p.ms-vscode.cpptools-extension-pack
               [
-                p.ms-vscode.cpptools
+                n.ms-vscode.cpptools # https://github.com/nix-community/nix-vscode-extensions/issues/69
                 m.ms-vscode.cpptools-themes
                 [
                   p.ms-vscode.cmake-tools
