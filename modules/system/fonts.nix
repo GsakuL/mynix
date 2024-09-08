@@ -17,17 +17,28 @@
       noto-fonts-monochrome-emoji
       twitter-color-emoji
       unicode-emoji
+
+      vazir-fonts # Persian
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      gentium
     ];
     fontconfig = {
       defaultFonts = {
         sansSerif = [
-          "Vazirmatn"
           "Ubuntu"
+
+          "Noto Sans CJK JP"
+          "Vazirmatn"
+          "Gentium Plus"
         ];
         serif = [
           "Vollkorn"
           "Liberation Serif"
+
+          "Noto Serif CJK JP"
           "Vazirmatn"
+          "Gentium Plus"
         ];
         monospace = [
           "FiraCode Nerd Font"
@@ -35,6 +46,7 @@
           "Fira Code"
           "Fira Mono"
           "Ubuntu Mono"
+          "Noto Sans Mono CJK JP"
         ];
         emoji = [
           "Twitter Color Emoji"
