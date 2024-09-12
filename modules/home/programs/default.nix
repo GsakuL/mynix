@@ -43,6 +43,8 @@
     commandLineArgs = [ "--password-store=basic" ];
   };
 
+  services.arrpc.enable = true; # vesktop
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages =
@@ -51,6 +53,7 @@
       signal-desktop
       telegram-desktop
       discord
+      vesktop
       keepassxc
 
       kdePackages.kalgebra

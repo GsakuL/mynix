@@ -43,6 +43,7 @@
               nixpkgs.overlays = [
                 (import ./overlays/chromium-wallet.nix)
                 (import ./overlays/citrix-fixes.nix { inherit config; })
+                (import ./overlays/vesktop)
               ];
             }
           )
