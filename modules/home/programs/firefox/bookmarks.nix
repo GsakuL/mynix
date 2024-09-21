@@ -31,13 +31,13 @@ let
       })()
     '';
   volumeBoost = (
-    mult:
+    op: mult:
     let
       m = builtins.toString mult;
     in
     {
-      name = "Volume *${m}";
-      url = "javascript:${withAudioContextFunc "ctx.gain.gain.value *= ${m}"}";
+      name = "Volume ${op}${m}";
+      url = "javascript:${withAudioContextFunc "ctx.gain.gain.value ${op}= ${m}"}";
     }
   );
 in
@@ -53,8 +53,9 @@ in
             name = "Mono Audio";
             url = "javascript:${withAudioContextFunc "ctx.audio.destination.channelCount = 1"}";
           }
-          (volumeBoost 3)
-          (volumeBoost 10)
+          (volumeBoost "/" 2)
+          (volumeBoost "*" 3)
+          (volumeBoost "*" 10)
         ];
       }
       {

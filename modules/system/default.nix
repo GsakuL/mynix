@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   trim-gen-sh = (
     pkgs.fetchurl {
@@ -42,11 +42,16 @@ in
       jq
       dos2unix
 
+      trickle
+
       usbutils
     ])
     ++ [
 
       (pkgs.python3.withPackages (pypkgs: with pypkgs; [ requests ]))
       trim-generations-bin
+      (pkgs.writeShellScriptBin "to-webp" ''
+        ${lib.getExe' pkgs.libwebp "cwebp"} "$1"  -mt -o "''${1}.webp"
+      '')
     ];
 }

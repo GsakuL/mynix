@@ -32,6 +32,7 @@ user_pref("browser.sessionstore.warnOnQuit", true);
 user_pref("browser.startup.page", 3);
 user_pref("browser.tabs.warnOnClose", true);
 user_pref("browser.tabs.warnOnCloseOtherTabs", true);
+user_pref("browser.translations.neverTranslateLanguages", "de,en");
 user_pref("browser.uidensity", 1);
 user_pref("browser.warnOnQuit", true);
 user_pref("browser.warnOnQuitShortcut", true);

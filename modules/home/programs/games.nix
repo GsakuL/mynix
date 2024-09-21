@@ -11,14 +11,14 @@
     enableSessionWide = false;
   };
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
     amdgpu_top
 
     bottles
     lutris
+    heroic
     protonup-qt
+    wineWowPackages.waylandFull
   ];
 
   home.sessionVariables = lib.optionalAttrs system-config.programs.steam.enable {
