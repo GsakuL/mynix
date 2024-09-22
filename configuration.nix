@@ -7,6 +7,7 @@
   lib,
   pkgs,
   inputs,
+  pkgs-alt,
   ...
 }:
 
@@ -89,8 +90,7 @@
 
   home-manager = {
     extraSpecialArgs = {
-      inherit inputs;
-      inherit pkgs;
+      inherit inputs pkgs pkgs-alt;
       system-config = config;
     };
     users = {

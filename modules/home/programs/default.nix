@@ -2,6 +2,7 @@
   system-config,
   pkgs,
   lib,
+  pkgs-alt,
   ...
 }:
 
@@ -81,7 +82,7 @@
       plasma-applet-caffeine-plus
       caffeine-ng
 
-      openscad-unstable
+      pkgs-alt.unstable-old.openscad-unstable
 
       thonny
     ])
