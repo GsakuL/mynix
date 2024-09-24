@@ -36,6 +36,7 @@ user_pref("browser.translations.neverTranslateLanguages", "de,en");
 user_pref("browser.uidensity", 1);
 user_pref("browser.warnOnQuit", true);
 user_pref("browser.warnOnQuitShortcut", true);
+user_pref("dom.private-attribution.submission.enabled", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("layout.testing.overlay-scrollbars.always-visible", true);
 user_pref("media.autoplay.default", 5);

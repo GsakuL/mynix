@@ -61,6 +61,7 @@
         "browser.newtabpage.activity-stream.default.sites" = default "";
         "browser.newtabpage.activity-stream.feeds.telemetry" = lock false;
         "browser.newtabpage.activity-stream.feeds.system.topstories" = lock false;
+        "dom.private-attribution.submission.enabled" = lock false;
 
         "browser.translations.neverTranslateLanguages" = lock "de,en";
       };
