@@ -51,6 +51,7 @@
             inherit system;
             specialArgs = {
               inherit inputs;
+              _tools = import ./modules/_tools;
               pkgs-alt = {
                 stable = import nixpkgs-stable {
                   inherit system;

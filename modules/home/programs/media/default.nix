@@ -2,9 +2,11 @@
   config,
   pkgs,
   lib,
+  _tools,
   ...
 }:
 let
+  inherit (_tools) scriptWithNArgs;
   mkMpv =
     {
       scripts ? [ ],
@@ -40,26 +42,46 @@ in
 
       libjxl
       libwebp
+      libavif
       ffmpeg-full
       puddletag
       mp3gain
 
-      #yt-dlg # https://github.com/NixOS/nixpkgs/issues/337754
+      yt-dlg
     ])
     ++ [
-
+      (pkgs.writeShellApplication {
+        name = "to-webp";
+        runtimeInputs = [ pkgs.libwebp ];
+        text = scriptWithNArgs 1 ''
+          exec cwebp "$1" -mt -o "''${1}.webp"
+        '';
+      })
+      (pkgs.writeShellApplication {
+        name = "from-webp";
+        runtimeInputs = [ pkgs.libwebp ];
+        text = scriptWithNArgs 2 ''
+          exec cwebp "$1" -mt -o "''${1}.''${2}"
+        '';
+      })
       (pkgs.yt-dlp.override {
         ffmpegSupport = true;
         ffmpeg-headless = pkgs.ffmpeg-full;
       })
     ]
     ++ (lib.optionals config.programs.mpv.enable [
-      (pkgs.writeShellScriptBin "mpv-bare" ''
-        ${lib.getExe (mkMpv { })} "$@"
-      '')
-
-      (pkgs.writeShellScriptBin "mpv-gui" ''
-        mpv --player-operation-mode=pseudo-gui "$@"
-      '')
+      (pkgs.writeShellApplication {
+        name = "mpv-bare";
+        runtimeInputs = [ (mkMpv { }) ];
+        text = ''
+          exec mpv "$@"
+        '';
+      })
+      (pkgs.writeShellApplication {
+        name = "mpv-gui";
+        text = ''
+          exec mpv --player-operation-mode=pseudo-gui "$@"
+        '';
+      })
     ]);
 }
