@@ -64,6 +64,10 @@
         "dom.private-attribution.submission.enabled" = lock false;
 
         "browser.translations.neverTranslateLanguages" = lock "de,en";
+
+        "signon.rememberSignons" = lock false;
+        "extensions.formautofill.addresses.enabled" = lock false;
+        "extensions.formautofill.creditCards.enabled" = lock false;
       };
   };
   defaultSettings = {
