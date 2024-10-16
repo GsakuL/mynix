@@ -70,6 +70,23 @@ in
             })
           })()'';
       }
+      {
+        name = "YT detatch playlist";
+        url = ''
+          javascript:(function()
+          {
+            ['https://www.youtube.com', 'https://youtube.com'].some(function(p)
+            {
+              if (window.location.href.startsWith(p))
+              {
+                let u = new URL(window.location.href);
+                ["list", "index", "start_radio"].forEach(x => u.searchParams.delete(x));
+                window.location.href = u.toString();
+                return true;
+              }
+            })
+          })()'';
+      }
     ];
   }
 
