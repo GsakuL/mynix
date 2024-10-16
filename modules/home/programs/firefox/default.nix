@@ -1,5 +1,6 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs-alt, ... }:
 let
+  pkgs = pkgs-alt.unstable-future;
   policies = builtins.import ./policies.nix;
   myBookmarks = builtins.import ./bookmarks.nix;
   ffa = inputs.firefox-addons.packages.${pkgs.system};

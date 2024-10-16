@@ -6,6 +6,9 @@
 
     nixpkgs-unstable-old.url = "github:nixos/nixpkgs/d0e1602ddde669d5beb01aec49d71a51937ed7be";
 
+    # allows to update this alone (but doesn't get left behind on full upgrade)
+    nixpkgs-unstable-future.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -39,6 +42,7 @@
       nixpkgs,
       nixpkgs-stable,
       nixpkgs-unstable-old,
+      nixpkgs-unstable-future,
       ...
     }@inputs:
     {
@@ -61,6 +65,7 @@
               pkgs-alt = {
                 stable = importPkgs nixpkgs-stable;
                 unstable-old = importPkgs nixpkgs-unstable-old;
+                unstable-future = importPkgs nixpkgs-unstable-future;
               };
             };
             modules = [
