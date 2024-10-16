@@ -51,10 +51,9 @@
   home.packages =
     (with pkgs; [
       thunderbird
-      signal-desktop
-      telegram-desktop
-      discord
-      vesktop
+      pkgs-alt.unstable-future.signal-desktop
+      pkgs-alt.unstable-future.telegram-desktop
+      pkgs-alt.unstable-future.vesktop
       keepassxc
 
       kdePackages.kalgebra
