@@ -46,6 +46,12 @@
         seifenkiste =
           let
             system = "x86_64-linux";
+            importPkgs =
+              p:
+              import p {
+                inherit system;
+                config.allowUnfree = true;
+              };
           in
           nixpkgs.lib.nixosSystem {
             inherit system;
@@ -53,14 +59,8 @@
               inherit inputs;
               _tools = import ./modules/_tools;
               pkgs-alt = {
-                stable = import nixpkgs-stable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-                unstable-old = import nixpkgs-unstable-old {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
+                stable = importPkgs nixpkgs-stable;
+                unstable-old = importPkgs nixpkgs-unstable-old;
               };
             };
             modules = [
