@@ -55,7 +55,13 @@
               import p {
                 inherit system;
                 config.allowUnfree = true;
+                inherit overlays;
               };
+            overlays = [
+              (import ./overlays/chromium-wallet.nix)
+              (import ./overlays/citrix-fixes.nix)
+              (import ./overlays/vesktop)
+            ];
           in
           nixpkgs.lib.nixosSystem {
             inherit system;
@@ -72,11 +78,7 @@
               (
                 { config, pkgs, ... }:
                 {
-                  nixpkgs.overlays = [
-                    (import ./overlays/chromium-wallet.nix)
-                    (import ./overlays/citrix-fixes.nix { inherit config; })
-                    (import ./overlays/vesktop)
-                  ];
+                  nixpkgs.overlays = overlays;
                 }
               )
               ./configuration.nix
