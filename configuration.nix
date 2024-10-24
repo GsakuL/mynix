@@ -86,7 +86,6 @@
     dnsutils
     dig
     gparted
-    citrix_workspace
   ];
 
   home-manager = {

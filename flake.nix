@@ -59,7 +59,6 @@
               };
             overlays = [
               (import ./overlays/chromium-wallet.nix)
-              (import ./overlays/citrix-fixes.nix)
               (import ./overlays/vesktop)
             ];
           in

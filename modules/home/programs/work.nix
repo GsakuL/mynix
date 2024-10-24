@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  system-config,
+  ...
+}:
 
 {
   home.activation = {
@@ -15,7 +20,18 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [ teams-for-linux ];
+  home.packages = with pkgs; [
+    teams-for-linux
+
+    (citrix_workspace.overrideAttrs (old: {
+      postInstall =
+        (old.postInstall or "")
+        + ''
+          echo "I re-set TimeZone to local, otherwise my Windows remote (Group Policy) shows completely wrong TZ"
+          echo "${system-config.time.timeZone}" > "$ICAInstDir/timezone"
+        '';
+    }))
+  ];
 
   home.sessionVariables = {
     # https://support.citrix.com/article/CTX209485/how-to-make-a-session-that-spans-multiple-monitors-with-linux-receiver

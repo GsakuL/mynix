@@ -19,3 +19,7 @@
 
 - citrix only works when starting from browser
   - glib-networking
+```sh
+crudini \
+  --set "$ICAInstDir/config/module.ini" ClientAudio AudioRedirectionV4 FALSE
+```
