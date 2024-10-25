@@ -81,7 +81,7 @@
       plasma-applet-caffeine-plus
       caffeine-ng
 
-      pkgs-alt.unstable-old.openscad-unstable
+      openscad-unstable
 
       thonny
     ])
