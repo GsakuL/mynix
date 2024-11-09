@@ -19,6 +19,7 @@ in
     ./networking.nix
     ./obs-studio.nix
     ./peripherals.nix
+    ./printer.nix
     ./scanner.nix
     ./sound
   ];
