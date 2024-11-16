@@ -8,6 +8,7 @@
 
 {
   imports = [
+    ./arrpc
     ./firefox
     ./games.nix
     ./git.nix
@@ -43,8 +44,6 @@
     package = pkgs.ungoogled-chromium;
     commandLineArgs = [ "--password-store=basic" ];
   };
-
-  services.arrpc.enable = true; # vesktop
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
