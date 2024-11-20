@@ -83,6 +83,8 @@
       caffeine-ng
 
       openscad-unstable
+      blender-hip
+      freecad-wayland
 
       thonny
     ])
