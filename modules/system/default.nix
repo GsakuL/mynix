@@ -24,6 +24,17 @@ in
     ./sound
   ];
 
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        kdePackages.xdg-desktop-portal-kde
+      ];
+    };
+  };
+
   services.flatpak.enable = true;
 
   programs.ausweisapp = {
