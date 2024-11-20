@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  pkgs-alt,
   system-config,
   ...
 }:
@@ -20,11 +21,11 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    teams-for-linux
+  home.packages = [
+    pkgs-alt.unstable-future.teams-for-linux
 
     (
-      (citrix_workspace.overrideAttrs (old: {
+      (pkgs.citrix_workspace.overrideAttrs (old: {
         postInstall =
           (old.postInstall or "")
           + ''
