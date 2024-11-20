@@ -76,6 +76,8 @@
 
       p7zip
       pxz
+      unzip
+      unrar
 
       plasma-applet-caffeine-plus
       caffeine-ng
