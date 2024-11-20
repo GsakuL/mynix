@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-alt,
   inputs,
   ...
 }:
@@ -9,6 +10,7 @@
 {
   home.packages = with pkgs; [ nixd ];
   programs.vscode = {
+    package = pkgs-alt.unstable-future.vscode;
     enable = true;
     mutableExtensionsDir = false;
     extensions =

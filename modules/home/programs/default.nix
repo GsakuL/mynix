@@ -42,7 +42,7 @@
 
   programs.chromium = {
     enable = true;
-    package = pkgs.ungoogled-chromium;
+    package = pkgs-alt.unstable-future.ungoogled-chromium;
     commandLineArgs = [ "--password-store=basic" ];
   };
 
