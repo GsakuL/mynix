@@ -15,6 +15,7 @@
     ./media
     ./terminals/kitty
     ./obs-studio.nix
+    ./vesktop
     ./vscode
     ./shells/zsh
     ./work.nix
@@ -52,7 +53,7 @@
       pkgs-alt.unstable-future.thunderbird
       pkgs-alt.unstable-future.signal-desktop
       pkgs-alt.unstable-future.telegram-desktop
-      pkgs-alt.unstable-future.vesktop
+
       keepassxc
 
       kdePackages.kalgebra
