@@ -43,7 +43,6 @@
   programs.chromium = {
     enable = true;
     package = pkgs-alt.unstable-future.ungoogled-chromium;
-    commandLineArgs = [ "--password-store=basic" ];
   };
 
   # The home.packages option allows you to install Nix packages into your

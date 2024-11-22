@@ -58,7 +58,6 @@
                 inherit overlays;
               };
             overlays = [
-              (import ./overlays/chromium-wallet.nix)
               (import ./overlays/vesktop)
             ];
           in
