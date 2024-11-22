@@ -17,6 +17,7 @@ in
     ./fonts.nix
     ./locale.nix
     ./networking.nix
+    ./nix-helpers
     ./obs-studio.nix
     ./peripherals.nix
     ./printer.nix
