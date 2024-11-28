@@ -9,6 +9,7 @@
 {
   imports = [
     ./arrpc
+    ./btop
     ./firefox
     ./games.nix
     ./git.nix
@@ -62,7 +63,6 @@
       kalker
 
       xwaylandvideobridge
-      btop
       fastfetch
       powershell
 

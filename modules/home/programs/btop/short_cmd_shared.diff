@@ -1,0 +1,18 @@
+diff --git a/src/btop_shared.cpp b/src/btop_shared.cpp
+index 1b8e526..c49e5cd 100644
+--- a/src/btop_shared.cpp
++++ b/src/btop_shared.cpp
+@@ -42,6 +42,13 @@ namespace Gpu {
+ 
+ namespace Proc {
+ 	void proc_sorter(vector<proc_info>& proc_vec, const string& sorting, bool reverse, bool tree) {
++		for(proc_info& cur_proc : proc_vec)
++			if (cur_proc.short_cmd.empty() and not cur_proc.cmd.empty()) {
++				std::string_view cmd_view = cur_proc.cmd;
++				cmd_view = cmd_view.substr((size_t)0, std::min(cmd_view.find(' '), cmd_view.size()));
++				cmd_view = cmd_view.substr(std::min(cmd_view.find_last_of('/') + 1, cmd_view.size()));
++				cur_proc.short_cmd = string{cmd_view};
++			}
+ 		if (reverse) {
+ 			switch (v_index(sort_vector, sorting)) {
+ 			case 0: rng::stable_sort(proc_vec, rng::less{}, &proc_info::pid); 		break;

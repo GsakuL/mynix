@@ -1,0 +1,22 @@
+diff --git a/src/btop_draw.cpp b/src/btop_draw.cpp
+index 1e53f98..0c99aec 100644
+--- a/src/btop_draw.cpp
++++ b/src/btop_draw.cpp
+@@ -1855,7 +1855,7 @@ namespace Proc {
+ 				out += Mv::to(y+2+lc, x+1)
+ 					+ g_color + rjust(to_string(p.pid), 8) + ' '
+ 					+ c_color + ljust(p.name, prog_size, true) + ' ' + end
+-					+ (cmd_size > 0 ? g_color + ljust(p.cmd, cmd_size, true, p_wide_cmd[p.pid]) + Mv::to(y+2+lc, x+11+prog_size+cmd_size) + ' ' : "");
++					+ (cmd_size > 0 ? g_color + ljust((p.short_cmd.empty() ? p.cmd : p.short_cmd), cmd_size, true, p_wide_cmd[p.pid]) + Mv::to(y+2+lc, x+11+prog_size+cmd_size) + ' ' : "");
+ 			}
+ 			//? Tree view line
+ 			else {
+@@ -1868,7 +1868,7 @@ namespace Proc {
+ 					width_left -= (ulen(p.name) + 1);
+ 				}
+ 				if (width_left > 7) {
+-					const string& cmd = width_left > 40 ? rtrim(p.cmd) : p.short_cmd;
++					const string& cmd = (p.short_cmd.empty() and (width_left > 40)) ? rtrim(p.cmd) : p.short_cmd;
+ 					if (not cmd.empty() and cmd != p.name) {
+ 						out += g_color + '(' + uresize(cmd, width_left - 3, p_wide_cmd[p.pid]) + ") ";
+ 						width_left -= (ulen(cmd, true) + 3);
