@@ -34,6 +34,8 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs =
@@ -64,7 +66,7 @@
           nixpkgs.lib.nixosSystem {
             inherit system;
             specialArgs = {
-              inherit inputs;
+              inherit self inputs system;
               _tools = import ./modules/_tools;
               pkgs-alt = {
                 stable = importPkgs nixpkgs-stable;
@@ -73,6 +75,16 @@
               };
             };
             modules = [
+              (
+                { self, system, ... }:
+                {
+                  environment.systemPackages = with self.inputs.nix-alien.packages.${system}; [
+                    nix-alien
+                  ];
+                  # Optional, needed for `nix-alien-ld`
+                  programs.nix-ld.enable = true;
+                }
+              )
               (
                 { config, pkgs, ... }:
                 {
