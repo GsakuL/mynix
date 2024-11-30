@@ -4,12 +4,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "FiraMono"
-        ];
-      })
+      nerd-fonts.fira-code
+      nerd-fonts.fira-mono
       fira-code
       fira-mono
       vollkorn
