@@ -14,4 +14,8 @@
     xorg.xev
     wev
   ];
+
+  # gamepads
+  hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
 }
