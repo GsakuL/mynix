@@ -22,6 +22,8 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       gentium
+
+      helvetica-neue-lt-std
     ];
     fontconfig = {
       defaultFonts = {

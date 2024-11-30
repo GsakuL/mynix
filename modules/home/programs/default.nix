@@ -56,6 +56,8 @@
 
       keepassxc
 
+      kdePackages.kruler
+
       kdePackages.kalgebra
       kdePackages.kcalc
       calc
@@ -68,6 +70,8 @@
 
       kate
       krita
+      gimp
+      inkscape
       libreoffice
       hunspell
       hunspellDicts.de_DE
@@ -87,6 +91,8 @@
       freecad-wayland
 
       thonny
+
+      appimage-run
     ])
     ++ lib.optional system-config.services.flatpak.enable pkgs.kdePackages.discover;
 }
