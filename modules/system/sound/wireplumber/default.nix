@@ -4,6 +4,8 @@
   environment.etc =
     let
       confs = [
+        "70-audeze-maxwell-disable-nopro"
+        "70-audeze-maxwell-game-chat"
         "70-bluez-props-no-headset"
         "70-bluez-rules-no-headset"
         "70-no-headset"
