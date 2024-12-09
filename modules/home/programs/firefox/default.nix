@@ -21,6 +21,7 @@ in
         extensions = with ffa; [
           dictionary-german
 
+          canvasblocker
           ublock-origin
           sponsorblock
           darkreader
