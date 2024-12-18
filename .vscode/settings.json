@@ -1,0 +1,12 @@
+{
+    "cSpell.customDictionaries": {
+        "project-words": {
+            "name": "project-words",
+            "path": "${workspaceRoot}/custom-dict.txt",
+            "addWords": true
+        },
+    },
+    "cSpell.allowCompoundWords": true,
+    "cSpell.caseSensitive": false,
+    "cSpell.language": "en,de",
+}
