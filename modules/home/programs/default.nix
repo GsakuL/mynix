@@ -22,6 +22,7 @@
     ./work.nix
   ];
 
+  services.caffeine.enable = lib.mkForce false;
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -84,7 +85,26 @@
       unrar
 
       plasma-applet-caffeine-plus
-      caffeine-ng
+      # caffeine-ng
+
+      (writeShellApplication {
+        name = "caffeine";
+        runtimeInputs = [ caffeine-ng ];
+        text = ''
+          exec caffeine "$@"
+        '';
+      })
+
+      (writeShellApplication {
+        name = "caffeine-loop";
+        runtimeInputs = [ caffeine-ng ];
+        text = ''
+          while true; do
+            caffeine "$@"
+            echo "caffeine crash at: $(date --iso-8601=seconds)"
+          done
+        '';
+      })
 
       openscad-unstable
       blender-hip
