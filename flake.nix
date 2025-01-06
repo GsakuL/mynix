@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable-old.url = "github:nixos/nixpkgs/2768c7d042a37de65bb1b5b3268fc987e534c49d";
+    nixpkgs-unstable-old.url = "github:nixos/nixpkgs/5d67ea6b4b63378b9c13be21e2ec9d1afc921713";
 
     # allows to update this alone (but doesn't get left behind on full upgrade)
     nixpkgs-unstable-future.url = "github:nixos/nixpkgs/nixos-unstable";
