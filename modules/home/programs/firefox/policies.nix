@@ -69,6 +69,7 @@
         "extensions.formautofill.addresses.enabled" = lock false;
         "extensions.formautofill.creditCards.enabled" = lock false;
       };
+    ExtensionSettings = import ./extensions.nix;
   };
   defaultSettings = {
     "pocket.enabled" = false;
@@ -82,8 +83,10 @@
     "font.name.serif.x-western" = "sans-serif";
     "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored" = false;
     "services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-    "urlclassifier.trackingSkipURLs" = "*.reddit.com, *.twitter.com, *.x.com, *.twimg.com, *.tiktok.com";
-    "urlclassifier.features.socialtracking.skipURLs" = "*.instagram.com, *.twitter.com, *.x.com, *.twimg.com";
+    "urlclassifier.trackingSkipURLs" =
+      "*.reddit.com, *.twitter.com, *.x.com, *.twimg.com, *.tiktok.com";
+    "urlclassifier.features.socialtracking.skipURLs" =
+      "*.instagram.com, *.twitter.com, *.x.com, *.twimg.com";
 
     "privacy.trackingprotection.socialtracking.enabled" = true;
 
