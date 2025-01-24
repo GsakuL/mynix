@@ -15,7 +15,7 @@
     mutableExtensionsDir = false;
     extensions =
       let
-        n = pkgs.vscode-extensions;
+        n = pkgs-alt.unstable-future.vscode-extensions;
         p = m;
         m = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
       in
