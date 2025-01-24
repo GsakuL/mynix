@@ -84,6 +84,8 @@
       unzip
       unrar
 
+      mqtt-explorer
+
       plasma-applet-caffeine-plus
       # caffeine-ng
 
@@ -113,6 +115,8 @@
       thonny
 
       appimage-run
+
+      wtype
     ])
     ++ lib.optional system-config.services.flatpak.enable pkgs.kdePackages.discover;
 }
