@@ -13,6 +13,8 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    flake-compat.url = "github:edolstra/flake-compat";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,10 +34,18 @@
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable-future";
         flake-utils.follows = "flake-utils";
+        flake-compat.follows = "flake-compat";
       };
     };
 
-    nix-alien.url = "github:thiagokokada/nix-alien";
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs-unstable-future";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs =
