@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pkgs-alt.unstable-old.epsonscan2
+    epsonscan2
     epson-escpr
 
     kdePackages.skanlite

@@ -109,7 +109,7 @@
       })
 
       openscad-unstable
-      pkgs-alt.unstable-old.blender-hip
+      blender-hip
       freecad-wayland
 
       thonny
