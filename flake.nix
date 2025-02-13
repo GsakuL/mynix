@@ -43,7 +43,6 @@
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs-unstable-future";
-        flake-utils.follows = "flake-utils";
       };
     };
   };
