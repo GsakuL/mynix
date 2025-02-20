@@ -19,24 +19,26 @@ in
         isDefault = true;
         settings = policies.defaultSettings;
         bookmarks = myBookmarks;
-        extensions = with ffa; [
-          dictionary-german
+        extensions = {
+          packages = with ffa; [
+            dictionary-german
 
-          canvasblocker
-          ublock-origin
-          sponsorblock
-          darkreader
-          keepassxc-browser
-          sponsorblock
-          auto-tab-discard
-          return-youtube-dislikes
-          stylus
-          noscript
-          violentmonkey
-          indie-wiki-buddy
-          redirector
-          ff2mpv
-        ];
+            canvasblocker
+            ublock-origin
+            sponsorblock
+            darkreader
+            keepassxc-browser
+            sponsorblock
+            auto-tab-discard
+            return-youtube-dislikes
+            stylus
+            noscript
+            violentmonkey
+            indie-wiki-buddy
+            redirector
+            ff2mpv
+          ];
+        };
       };
       work = {
         name = "Arbeit";
