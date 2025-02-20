@@ -10,6 +10,7 @@ in
   programs.firefox = {
     package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
     enable = true;
+    nativeMessagingHosts = [ pkgs.ff2mpv-rust ];
     policies = policies.defaultPolicies;
     profiles = {
       default = {
@@ -34,6 +35,7 @@ in
           violentmonkey
           indie-wiki-buddy
           redirector
+          ff2mpv
         ];
       };
       work = {
@@ -44,7 +46,7 @@ in
           "browser.theme.content-theme" = 1;
           "browser.theme.toolbar-theme" = 1;
         };
-        extensions = with ffa; [ violentmonkey ];
+        # extensions = with ffa; [ violentmonkey ];
       };
     };
   };

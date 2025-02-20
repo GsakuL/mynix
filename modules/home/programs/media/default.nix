@@ -29,7 +29,19 @@ in
         mpris
         thumbfast
         modernx
+        sponsorblock-minimal
       ];
+    };
+  };
+
+  home.file = {
+    ".config/ff2mpv-rust.json" = {
+      text = ''
+        {
+          "player_command": "mpv",
+          "player_args": ["--no-config", "--autofit=800"]
+        }
+      '';
     };
   };
 
