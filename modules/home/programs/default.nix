@@ -54,6 +54,7 @@
       pkgs-alt.unstable-future.thunderbird
       pkgs-alt.unstable-future.signal-desktop
       pkgs-alt.unstable-future.telegram-desktop
+      pkgs-alt.unstable-future.tor-browser
 
       keepassxc
 
