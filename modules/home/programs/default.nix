@@ -66,11 +66,11 @@
       rink
       kalker
 
-      xwaylandvideobridge
+      kdePackages.xwaylandvideobridge
       fastfetch
       powershell
 
-      kate
+      kdePackages.kate
       krita
       gimp
       inkscape
@@ -87,7 +87,7 @@
 
       mqtt-explorer
 
-      plasma-applet-caffeine-plus
+      # kdePackages.plasma-applet-caffeine-plus
       # caffeine-ng
 
       (writeShellApplication {
