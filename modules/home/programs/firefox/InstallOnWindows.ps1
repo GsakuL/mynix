@@ -60,10 +60,25 @@ $lines += Get-Parrot "all done 👍"
 $text = ($lines -join ([System.Environment]::NewLine)).Trim()
 [Io.File]::WriteAllText($mergedFile, $text, $utf8)
 
-$profiles_root = Resolve-Path "${ENV:AppData}\Mozilla\Firefox\Profiles"
-$profiles = Get-ChildItem -Path $profiles_root -Directory
+$script:PossibleBrowsers = @(
+  "${ENV:AppData}\Mozilla\Firefox\Profiles",
+  "${ENV:AppData}\librewolf\Profiles",
+  "${ENV:AppData}\.librewolf\Profiles",
+)
 
-foreach ($profile in $profiles)
+function Get-ProfileFolders
+{
+  for ($browser in $script:PossibleBrowsers)
+  {
+    if (Test-Path $browser)
+    {
+      $profiles_root = Resolve-Path $browser
+      Get-ChildItem -Path $profiles_root -Directory
+    }
+  }
+}
+
+foreach ($profile in Get-ProfileFolders)
 {
   $target = Join-Path $profile.FullName "user.js"
   $target

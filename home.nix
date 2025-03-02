@@ -12,7 +12,6 @@
   home.enableNixpkgsReleaseCheck = false;
 
   imports = [
-    #./firefox.nix
     ./modules/home/programs
   ];
   # Home Manager needs a bit of information about you and the paths it should

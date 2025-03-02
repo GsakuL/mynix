@@ -1,4 +1,4 @@
-{
+rec {
   # https://mozilla.github.io/policy-templates/
   defaultPolicies = {
     RequestedLocales = [
@@ -61,6 +61,9 @@
         "browser.newtabpage.activity-stream.default.sites" = default "";
         "browser.newtabpage.activity-stream.feeds.telemetry" = lock false;
         "browser.newtabpage.activity-stream.feeds.system.topstories" = lock false;
+
+        "browser.toolbars.bookmarks.visibility" = lock "always";
+
         "dom.private-attribution.submission.enabled" = lock false;
 
         "browser.translations.neverTranslateLanguages" = lock "de,en";
@@ -71,7 +74,18 @@
       };
     ExtensionSettings = import ./extensions.nix;
   };
-  defaultSettings = {
+  softLibrewolfSettings = {
+    # "privacy.resistFingerprinting.letterboxing" = true;
+
+    "webgl.disabled" = false;
+
+    "privacy.clearOnShutdown.history" = false;
+    "privacy.clearOnShutdown.downloads" = false;
+
+    "middlemouse.paste" = false;
+    "general.autoScroll" = true;
+  };
+  defaultSettings = softLibrewolfSettings // {
     "pocket.enabled" = false;
 
     "toolkit.telemetry.enabled" = false;
@@ -93,5 +107,9 @@
     "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
     "browser.theme.content-theme" = 0;
     "browser.theme.toolbar-theme" = 0;
+
+    "identity.fxaccounts.enabled" = false;
+    "privacy.clearOnShutdown.cookies" = true;
+    "dom.security.https_only_mode" = true;
   };
 }
