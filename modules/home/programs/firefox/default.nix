@@ -1,9 +1,15 @@
-{ inputs, pkgs-alt, ... }:
+{
+  inputs,
+  pkgs-alt,
+  lib,
+  ...
+}:
 let
   pkgs = pkgs-alt.unstable-future;
   policies = builtins.import ./policies.nix;
   myBookmarks = builtins.import ./bookmarks.nix;
   ffa = inputs.firefox-addons.packages.${pkgs.system};
+  userChrome = builtins.import ./userChrome { inherit lib; };
 in
 {
   # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
@@ -40,6 +46,7 @@ in
             ff2mpv
           ];
         };
+        userChrome = userChrome.default;
       };
       work = {
         name = "Arbeit";

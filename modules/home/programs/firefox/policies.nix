@@ -111,5 +111,7 @@ rec {
     "identity.fxaccounts.enabled" = false;
     "privacy.clearOnShutdown.cookies" = true;
     "dom.security.https_only_mode" = true;
+
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };
 }

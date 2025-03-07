@@ -1,0 +1,6 @@
+#tabbrowser-tabs .tab-audio-button {
+    display: none !important;
+    overflow: hidden !important;
+    width: 0px !important;
+    height: 0px !important;
+}
