@@ -1,9 +1,7 @@
 {
-  config,
   lib,
   pkgs,
   pkgs-alt,
-  inputs,
   ...
 }:
 
@@ -13,11 +11,11 @@
     package = pkgs-alt.unstable-future.vscode;
     enable = true;
     mutableExtensionsDir = false;
-    extensions =
+    profiles.default.extensions =
       let
         n = pkgs-alt.unstable-future.vscode-extensions;
         p = m;
-        m = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+        m = pkgs-alt.unstable-future.vscode-marketplace;
       in
       lib.lists.flatten [
         # files / misc langs

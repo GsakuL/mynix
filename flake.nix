@@ -34,7 +34,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable-future";
         flake-utils.follows = "flake-utils";
-        flake-compat.follows = "flake-compat";
       };
     };
 
@@ -61,12 +60,13 @@
         seifenkiste =
           let
             system = "x86_64-linux";
-            importPkgs =
-              p:
+            importPkgs = p: importPkgsWithOverlays p [ ];
+            importPkgsWithOverlays =
+              p: o:
               import p {
                 inherit system;
                 config.allowUnfree = true;
-                inherit overlays;
+                overlays = overlays ++ o;
               };
             overlays = [
               (import ./overlays/vesktop)
@@ -80,7 +80,9 @@
               pkgs-alt = {
                 stable = importPkgs nixpkgs-stable;
                 unstable-old = importPkgs nixpkgs-unstable-old;
-                unstable-future = importPkgs nixpkgs-unstable-future;
+                unstable-future = importPkgsWithOverlays nixpkgs-unstable-future [
+                  inputs.nix-vscode-extensions.overlays.default
+                ];
               };
             };
             modules = [
