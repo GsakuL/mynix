@@ -25,7 +25,18 @@ in
         id = 0;
         isDefault = true;
         settings = policies.defaultSettings;
-        bookmarks = myBookmarks;
+        search.engines = {
+          "Qwant" = {
+            urls = [
+              {
+                template = myBookmarks.getQuantUrl "{searchTerms}";
+              }
+            ];
+          };
+          "Bing".metaData.hidden = true;
+          "Google".metaData.hidden = true;
+        };
+        bookmarks = myBookmarks.bookmarks;
         extensions = {
           packages = with ffa; [
             dictionary-german

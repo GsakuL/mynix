@@ -62,6 +62,8 @@ rec {
         "browser.newtabpage.activity-stream.feeds.telemetry" = lock false;
         "browser.newtabpage.activity-stream.feeds.system.topstories" = lock false;
 
+        "browser.urlbar.suggest.trending" = lock false;
+
         "browser.toolbars.bookmarks.visibility" = lock "always";
 
         "dom.private-attribution.submission.enabled" = lock false;
