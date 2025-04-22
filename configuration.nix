@@ -89,6 +89,7 @@
   ];
 
   home-manager = {
+    backupFileExtension = ".bak-home-manager";
     extraSpecialArgs = {
       inherit
         inputs
