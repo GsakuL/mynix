@@ -63,6 +63,7 @@
   #
   home.sessionVariables = {
     # MANGOHUD = "1";
+    "TERMINAL" = "kitty";
   };
 
   # Let Home Manager install and manage itself.
