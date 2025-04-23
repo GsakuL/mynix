@@ -29,7 +29,7 @@ in
       PROMPT_EOL_MARK = "";
     };
 
-    initExtra = builtins.readFile ./initExtra.zsh;
+    initContent = builtins.readFile ./initExtra.zsh;
 
     zplug = {
       enable = true;
