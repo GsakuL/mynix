@@ -2,3 +2,5 @@ pkgs
 nixos
 nixpkgs
 lib
+Qwant
+qwant

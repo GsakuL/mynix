@@ -40,12 +40,12 @@ let
       url = "javascript:${withAudioContextFunc "ctx.gain.gain.value ${op}= ${m}"}";
     }
   );
-  getQuantUrl =
+  getQwantUrl =
     queryParam:
     "https://www.qwant.com/?theme=1&hc=0&hti=0&vt=1&b=1&s=0&ch=none&l=en&locale=de_DE&home=daily&si=1&c=blue&eco_suggest=1&client=opensearch&q=${queryParam}";
 in
 {
-  inherit getQuantUrl;
+  inherit getQwantUrl;
   bookmarks = [
     {
       name = "Nix Toolbar Bookmarks";
@@ -97,8 +97,8 @@ in
 
     # Bookmarks Menu
     {
-      name = "Quant";
-      url = getQuantUrl "%s";
+      name = "Qwant";
+      url = getQwantUrl "%s";
       keyword = "q";
     }
     {

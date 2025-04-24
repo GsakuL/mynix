@@ -25,16 +25,20 @@ in
         id = 0;
         isDefault = true;
         settings = policies.defaultSettings;
-        search.engines = {
-          "qwant" = {
-            urls = [
-              {
-                template = myBookmarks.getQuantUrl "{searchTerms}";
-              }
-            ];
+        search = {
+          default = "qwant";
+          force = true;
+          engines = {
+            "qwant" = {
+              urls = [
+                {
+                  template = myBookmarks.getQwantUrl "{searchTerms}";
+                }
+              ];
+            };
+            "bing".metaData.hidden = true;
+            "google".metaData.hidden = true;
           };
-          "bing".metaData.hidden = true;
-          "google".metaData.hidden = true;
         };
         bookmarks = {
           force = true;
