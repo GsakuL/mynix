@@ -98,16 +98,15 @@
         '';
       })
 
-      (writeShellApplication {
-        name = "caffeine-loop";
-        runtimeInputs = [ caffeine-ng ];
-        text = ''
-          while true; do
-            caffeine "$@"
-            echo "caffeine crash at: $(date --iso-8601=seconds)"
-          done
-        '';
-      })
+      (writeShellScriptBin "caffeine-loop" ''
+        set +o pipefail
+
+        export PATH="${lib.makeBinPath [ caffeine-ng ]}:$PATH"
+        while true; do
+          caffeine "$@" || true
+          echo "caffeine crash at: $(date --iso-8601=seconds)"
+        done
+      '')
 
       openscad-unstable
       blender-hip
