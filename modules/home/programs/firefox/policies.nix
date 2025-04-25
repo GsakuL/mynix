@@ -46,7 +46,7 @@ rec {
         "browser.fixup.alternate.enabled" = lock false; # Don't try to guess domain names when entering an invalid domain name in URL bar
         "layout.testing.overlay-scrollbars.always-visible" = lock true;
 
-        "browser.startup.page" = lock 3; # tabs and windows from previus session
+        "browser.startup.page" = lock 3; # tabs and windows from previous session
         "media.autoplay.enabled" = default false;
         "media.eme.enabled" = default true;
         "media.autoplay.default" = default 5; # block audio and video by default
@@ -109,6 +109,7 @@ rec {
     "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
     "browser.theme.content-theme" = 0;
     "browser.theme.toolbar-theme" = 0;
+    "browser.tabs.tabMinWidth" = 100; # "fix" sound-playing width change
 
     "identity.fxaccounts.enabled" = false;
     "privacy.clearOnShutdown.cookies" = true;

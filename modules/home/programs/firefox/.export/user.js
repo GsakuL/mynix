@@ -1,4 +1,5 @@
 user_pref("_user.js.parrot", "START fromSettings");
+user_pref("browser.tabs.tabMinWidth", 100);
 user_pref("browser.theme.content-theme", 0);
 user_pref("browser.theme.toolbar-theme", 0);
 user_pref("dom.security.https_only_mode", true);
@@ -43,6 +44,7 @@ user_pref("browser.tabs.warnOnCloseOtherTabs", true);
 user_pref("browser.toolbars.bookmarks.visibility", "always");
 user_pref("browser.translations.neverTranslateLanguages", "de,en");
 user_pref("browser.uidensity", 1);
+user_pref("browser.urlbar.suggest.trending", false);
 user_pref("browser.warnOnQuit", true);
 user_pref("browser.warnOnQuitShortcut", true);
 user_pref("dom.private-attribution.submission.enabled", false);

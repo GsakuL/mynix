@@ -10,3 +10,4 @@ mkdir -p .export
 #nix eval --file export.nix --apply 'f: f { settings = true; }' --raw > .export/user.js
 
 nix eval --file export.nix --apply 'f: f {  }' --raw > .export/user.js
+sed -i '/"toolkit.legacyUserProfileCustomizations.stylesheets"/d' .export/user.js
