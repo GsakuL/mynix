@@ -1,23 +1,20 @@
-{ lib, ... }:
+{ pkgs, ... }:
 
 {
-  environment.etc =
+  services.pipewire.wireplumber.configPackages =
     let
-      confs = [
-        "70-audeze-maxwell-disable-nopro"
-        "70-audeze-maxwell-game-chat"
-        "70-bluez-props-no-headset"
-        "70-bluez-rules-no-headset"
-        "70-no-headset"
-        "70-no-webcam-mic"
-      ];
-      kvp = builtins.map (
-        v:
-        lib.attrsets.nameValuePair "wireplumber/wireplumber.conf.d/${v}.conf" {
-          source = ./. + "/conf.d/${v}.conf";
-        }
-      ) confs;
-      mapping = builtins.listToAttrs kvp;
+      writeConf =
+        n:
+        pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/${n}.conf" (
+          builtins.readFile (./. + "/conf.d/${n}.conf")
+        );
     in
-    mapping;
+    builtins.map writeConf [
+      "70-audeze-maxwell-disable-nopro"
+      "70-audeze-maxwell-game-chat"
+      "70-bluez-props-no-headset"
+      "70-bluez-rules-no-headset"
+      "70-no-headset"
+      "70-no-webcam-mic"
+    ];
 }
