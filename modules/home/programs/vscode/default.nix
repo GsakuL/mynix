@@ -8,7 +8,9 @@
 {
   home.packages = with pkgs; [ nixd ];
   programs.vscode = {
-    package = pkgs-alt.unstable-future.vscode;
+    package = (
+      pkgs-alt.unstable-future.vscode.override { commandLineArgs = "--password-store=basic"; }
+    );
     enable = true;
     mutableExtensionsDir = false;
     profiles.default.extensions =
