@@ -18,6 +18,7 @@
     ./obs-studio.nix
     ./vesktop
     ./vscode
+    ./shells/starship
     ./shells/zsh
     ./work.nix
   ];
