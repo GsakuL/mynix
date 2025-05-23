@@ -109,7 +109,7 @@
         done
       '')
 
-      openscad-unstable
+      pkgs-alt.unstable-old.openscad-unstable # https://github.com/NixOS/nixpkgs/issues/409975
       blender-hip
       freecad-wayland
 
