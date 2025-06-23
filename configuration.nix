@@ -86,6 +86,11 @@
     dnsutils
     dig
     gparted
+    uutils-coreutils
+
+    # high priority to override gnu-coreutils/uptime
+    # core-utils/uptime reports the wrong time (RTC related?), it's missing the UTC offset
+    (lib.hiPrio procps)
   ];
 
   home-manager = {
