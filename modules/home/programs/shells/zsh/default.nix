@@ -40,7 +40,7 @@ in
   };
 
   programs.oh-my-posh = {
-    enable = true;
+    enable = false;
     settings = builtins.fromTOML (builtins.readFile ../ohmyposh/config.toml);
   };
 }

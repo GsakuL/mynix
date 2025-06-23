@@ -11,3 +11,5 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+
+DISABLE_MAGIC_FUNCTIONS=true
