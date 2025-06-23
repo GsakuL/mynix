@@ -63,7 +63,7 @@ in
             ff2mpv
           ];
         };
-        userChrome = userChrome.default;
+        # userChrome = userChrome.default;
       };
       work = {
         name = "Arbeit";

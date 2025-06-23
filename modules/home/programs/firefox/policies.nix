@@ -115,6 +115,6 @@ rec {
     "privacy.clearOnShutdown.cookies" = true;
     "dom.security.https_only_mode" = true;
 
-    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    #"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };
 }
