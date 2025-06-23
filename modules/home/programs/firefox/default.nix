@@ -75,6 +75,10 @@ in
         };
         # extensions = with ffa; [ violentmonkey ];
       };
+      playground = {
+        name = "playground";
+        id = 2;
+      };
     };
   };
 }
