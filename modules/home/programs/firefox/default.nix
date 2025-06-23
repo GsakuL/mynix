@@ -13,15 +13,14 @@ let
 in
 {
   # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
-  programs.librewolf = {
-    package = pkgs.wrapFirefox (pkgs.librewolf-unwrapped.override { pipewireSupport = true; }) { };
+  programs.firefox = {
+    package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { };
     enable = true;
     nativeMessagingHosts = [ pkgs.ff2mpv-rust ];
     policies = policies.defaultPolicies;
-    settings = policies.softLibrewolfSettings;
     profiles = {
-      default = {
-        name = "default";
+      myDefault = {
+        name = "myDefault";
         id = 0;
         isDefault = true;
         settings = policies.defaultSettings;
