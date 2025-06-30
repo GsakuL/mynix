@@ -16,6 +16,7 @@
     ./media
     ./terminals/kitty
     ./obs-studio.nix
+    ./podman.nix
     ./vesktop
     ./vscode
     ./shells/starship
