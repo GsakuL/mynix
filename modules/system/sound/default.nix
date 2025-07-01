@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./wireplumber ];
+  imports = [
+    ./pipewire
+    ./wireplumber
+  ];
 
   security.rtkit.enable = true;
 

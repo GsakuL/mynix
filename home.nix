@@ -64,6 +64,7 @@
   home.sessionVariables = {
     # MANGOHUD = "1";
     "TERMINAL" = "kitty";
+    "PULSE_SERVER_FOR_DOCKER" = "tcp:127.0.0.1:53972";
   };
 
   # Let Home Manager install and manage itself.
