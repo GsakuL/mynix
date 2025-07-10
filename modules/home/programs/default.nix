@@ -61,6 +61,8 @@
 
       keepassxc
 
+      kdePackages.kweathercore
+      kdePackages.filelight
       kdePackages.kruler
 
       kdePackages.kalgebra
@@ -72,6 +74,7 @@
       kdePackages.xwaylandvideobridge
       fastfetch
       powershell
+      most
 
       kdePackages.kate
       krita
@@ -111,6 +114,15 @@
         done
       '')
 
+      (writeShellScriptBin "caffeine-loop-start" ''
+        set +o pipefail
+
+        export PATH="${lib.makeBinPath [ caffeine-ng ]}:$PATH"
+        while true; do
+          caffeine start -a || true
+        done
+      '')
+
       pkgs-alt.unstable-old.openscad-unstable # https://github.com/NixOS/nixpkgs/issues/409975
       blender-hip
       freecad-wayland
@@ -118,6 +130,7 @@
       thonny
 
       appimage-run
+      nix-index
 
       wtype
     ])
