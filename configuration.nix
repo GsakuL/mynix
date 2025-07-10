@@ -46,6 +46,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ]; # Enable ‘sudo’ for the user.
   };
 

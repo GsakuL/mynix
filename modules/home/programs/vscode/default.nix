@@ -20,6 +20,8 @@
         m = pkgs-alt.unstable-future.vscode-marketplace;
       in
       lib.lists.flatten [
+        m.ms-vscode-remote.remote-containers
+
         # files / misc langs
         p.tamasfe.even-better-toml
         p.jnoortheen.nix-ide
