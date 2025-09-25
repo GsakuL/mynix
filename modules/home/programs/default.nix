@@ -123,7 +123,7 @@
         done
       '')
 
-      pkgs-alt.unstable-old.openscad-unstable # https://github.com/NixOS/nixpkgs/issues/409975
+      openscad-unstable
       blender-hip
       freecad-wayland
 
