@@ -133,6 +133,9 @@
       nix-index
 
       wtype
+
+      openssl.dev # nix-alien
+      openssl # nix-alien
     ])
     ++ lib.optional system-config.services.flatpak.enable pkgs.kdePackages.discover;
 }
