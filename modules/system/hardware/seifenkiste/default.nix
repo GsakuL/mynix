@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 
@@ -46,5 +47,17 @@
   nix.gc = {
     automatic = true;
     options = "";
+  };
+
+  services.udev = {
+    packages = with pkgs; [ picoprobe-udev-rules ];
+    extraRules = ''
+      # PicoProbe
+      #SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="660", GROUP="dialout"
+      #SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000a", MODE="660", GROUP="dialout"
+
+      # Raspberry Pi Debug Probe (CMSIS-DAP)
+      #SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000c", MODE="660", GROUP="dialout"
+    '';
   };
 }

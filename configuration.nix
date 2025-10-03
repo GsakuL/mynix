@@ -47,6 +47,8 @@
       "networkmanager"
       "wheel"
       "docker"
+      "plugdev"
+      "dialout"
     ]; # Enable ‘sudo’ for the user.
   };
 
