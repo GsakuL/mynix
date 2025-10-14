@@ -49,7 +49,7 @@
       "docker"
       "plugdev"
       "dialout"
-    ]; # Enable ‘sudo’ for the user.
+    ];
   };
 
   programs = {
