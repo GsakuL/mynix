@@ -5,7 +5,7 @@
   ...
 }:
 let
-  zshDotDir = ".config/zsh";
+  zshDotDir = "${config.xdg.configHome}/zsh";
 in
 {
   programs.zsh = {
