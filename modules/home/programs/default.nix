@@ -127,6 +127,8 @@
       blender-hip
       freecad-wayland
 
+      kicad
+
       thonny
 
       appimage-run
