@@ -15,7 +15,6 @@
     mutableExtensionsDir = false;
     profiles.default.extensions =
       let
-        n = pkgs-alt.unstable-future.vscode-extensions;
         p = m;
         m = pkgs-alt.unstable-future.vscode-marketplace;
       in
@@ -50,34 +49,6 @@
           ]
         ]
         p.wholroyd.jinja
-
-        # c/c++
-        [
-          m.raspberry-pi.raspberry-pi-pico
-          [
-            [
-              p.ms-vscode.cpptools-extension-pack
-              [
-                n.ms-vscode.cpptools # https://github.com/nix-community/nix-vscode-extensions/issues/69
-                m.ms-vscode.cpptools-themes
-                [
-                  p.ms-vscode.cmake-tools
-                  [ p.twxs.cmake ]
-                ]
-              ]
-            ]
-            [
-              m.marus25.cortex-debug
-              [
-                m.mcu-debug.debug-tracker-vscode
-                m.mcu-debug.memory-view
-                m.mcu-debug.rtos-views
-                m.mcu-debug.peripheral-viewer
-              ]
-            ]
-            m.ms-vscode.vscode-serial-monitor
-          ]
-        ]
       ];
   };
   home.sessionVariables = {
