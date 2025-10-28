@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable-old.url = "github:nixos/nixpkgs/5d67ea6b4b63378b9c13be21e2ec9d1afc921713";
+    nixpkgs-unstable-old.url = "github:nixos/nixpkgs/5e2a59a5b1a82f89f2c7e598302a9cacebb72a67";
+    nixpkgs-unstable-very-old.url = "github:nixos/nixpkgs/5d67ea6b4b63378b9c13be21e2ec9d1afc921713";
 
     # allows to update this alone (but doesn't get left behind on full upgrade)
     nixpkgs-unstable-future.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -50,6 +51,7 @@
       nixpkgs,
       nixpkgs-stable,
       nixpkgs-unstable-old,
+      nixpkgs-unstable-very-old,
       nixpkgs-unstable-future,
       ...
     }@inputs:
@@ -78,6 +80,7 @@
               pkgs-alt = {
                 stable = importPkgs nixpkgs-stable;
                 unstable-old = importPkgs nixpkgs-unstable-old;
+                unstable-very-old = importPkgs nixpkgs-unstable-very-old;
                 unstable-future = importPkgsWithOverlays nixpkgs-unstable-future [
                   inputs.nix-vscode-extensions.overlays.default
                 ];

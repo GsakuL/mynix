@@ -71,7 +71,6 @@
       rink
       kalker
 
-      kdePackages.xwaylandvideobridge
       fastfetch
       powershell
       most
@@ -123,7 +122,7 @@
         done
       '')
 
-      openscad-unstable
+      pkgs-alt.unstable-old.openscad-unstable # https://github.com/NixOS/nixpkgs/issues/455261
       blender-hip
       freecad-wayland
 

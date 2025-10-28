@@ -60,7 +60,7 @@ in
       jq
       dos2unix
 
-      pkgs-alt.unstable-old.trickle
+      pkgs-alt.unstable-very-old.trickle
 
       usbutils
     ])
