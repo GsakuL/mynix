@@ -9,7 +9,7 @@
       fira-code
       fira-mono
       vollkorn
-      ubuntu_font_family
+      ubuntu-classic
       noto-fonts-monochrome-emoji
       twitter-color-emoji
       unicode-emoji
