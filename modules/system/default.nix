@@ -45,6 +45,11 @@ in
 
   services.flatpak.enable = true;
 
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
+
   programs.ausweisapp = {
     enable = true;
     openFirewall = true;
