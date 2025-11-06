@@ -19,8 +19,7 @@
     ./podman.nix
     ./vesktop
     ./vscode
-    ./shells/starship
-    ./shells/zsh
+    ./shells
     ./work.nix
   ];
 

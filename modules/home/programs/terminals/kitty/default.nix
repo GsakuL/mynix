@@ -10,5 +10,8 @@ in
   programs.kitty = {
     enable = true;
     extraConfig = builtins.readFile ./extras.kitty.conf;
+    environment = {
+      "TERM" = "xterm-256color";
+    };
   };
 }
