@@ -73,6 +73,12 @@ rec {
         "signon.rememberSignons" = lock false;
         "extensions.formautofill.addresses.enabled" = lock false;
         "extensions.formautofill.creditCards.enabled" = lock false;
+
+        "browser.ml.chat.enabled" = lock false;
+        "browser.ml.chat.menu" = lock false;
+        "browser.ml.chat.page" = lock false;
+        "browser.ml.chat.shortcuts" = lock false;
+        "browser.ml.chat.sidebar" = lock false;
       };
     ExtensionSettings = import ./extensions.nix;
   };
