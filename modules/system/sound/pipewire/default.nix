@@ -10,6 +10,7 @@
         );
     in
     (builtins.map writeConf [
+      "80-combine-mic"
       "80-pulse-local-tcp"
     ]);
 }
