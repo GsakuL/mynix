@@ -57,7 +57,10 @@ in
       libavif
       ffmpeg-full
       puddletag
+      picard
       mp3gain
+      vorbisgain
+      flac
 
       yt-dlg
     ])
