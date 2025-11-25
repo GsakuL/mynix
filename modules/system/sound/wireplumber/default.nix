@@ -16,5 +16,6 @@
       "70-bluez-rules-no-headset"
       "70-no-headset"
       "70-no-webcam-mic"
+      "71-output-priority"
     ];
 }
