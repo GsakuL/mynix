@@ -14,6 +14,8 @@
   home.packages = with pkgs; [
     amdgpu_top
 
+    prismlauncher
+
     bottles
     lutris
     heroic
