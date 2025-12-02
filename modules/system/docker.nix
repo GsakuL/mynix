@@ -16,6 +16,9 @@
     [
       distrobox
       docker-compose
+
+      dive
+      docker-slim
     ]
   );
 }
