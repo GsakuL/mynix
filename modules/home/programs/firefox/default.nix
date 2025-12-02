@@ -48,6 +48,7 @@ in
             dictionary-german
 
             canvasblocker
+            clearurls
             ublock-origin
             sponsorblock
             darkreader
