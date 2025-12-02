@@ -122,5 +122,8 @@ rec {
     "dom.security.https_only_mode" = true;
 
     #"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+    "gfx.webrender.layer-compositor" = true;
+    "media.wmf.zero-copy-nv12-textures-force-enabled" = true;
   };
 }
