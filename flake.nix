@@ -29,11 +29,6 @@
       };
     };
 
-    nix4vscode = {
-      url = "github:nix-community/nix4vscode";
-      inputs.nixpkgs.follows = "nixpkgs-unstable-future";
-    };
-
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
       inputs = {
@@ -51,7 +46,6 @@
       nixpkgs-unstable-old,
       nixpkgs-unstable-very-old,
       nixpkgs-unstable-future,
-      nix4vscode,
       ...
     }@inputs:
     {
@@ -80,9 +74,7 @@
                 stable = importPkgs nixpkgs-stable;
                 unstable-old = importPkgs nixpkgs-unstable-old;
                 unstable-very-old = importPkgs nixpkgs-unstable-very-old;
-                unstable-future = importPkgsWithOverlays nixpkgs-unstable-future [
-                  nix4vscode.overlays.default
-                ];
+                unstable-future = importPkgs nixpkgs-unstable-future;
               };
             };
             modules = [

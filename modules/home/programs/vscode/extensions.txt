@@ -1,0 +1,15 @@
+eamodio.gitlens
+janisdd.vscode-edit-csv
+jnoortheen.nix-ide
+medo64.render-crlf
+mkhl.direnv
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
+ms-vscode.live-server
+ms-vscode-remote.remote-containers
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-german
+tamasfe.even-better-toml
+wholroyd.jinja
