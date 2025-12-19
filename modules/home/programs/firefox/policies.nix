@@ -16,6 +16,13 @@ rec {
       EmailTracking = true;
     };
     DisablePocket = true;
+    GenerativeAI = {
+      Enabled = false;
+      Chatbot = false;
+      LinkPreviews = false;
+      TabGroups = false;
+      Locked = true;
+    };
     Preferences =
       let
         lock = v: {
@@ -74,11 +81,17 @@ rec {
         "extensions.formautofill.addresses.enabled" = lock false;
         "extensions.formautofill.creditCards.enabled" = lock false;
 
+        "browser.ml.enable" = lock false;
+        "browser.ml.enabled" = lock false;
         "browser.ml.chat.enabled" = lock false;
         "browser.ml.chat.menu" = lock false;
         "browser.ml.chat.page" = lock false;
         "browser.ml.chat.shortcuts" = lock false;
         "browser.ml.chat.sidebar" = lock false;
+        "browser.ml.linkPreview.enabled" = lock false;
+        "browser.ml.pageAssist.enabled" = lock false;
+        "browser.ml.smartAssist.enabled" = lock false;
+        "extensions.ml.enabled" = lock false;
       };
     ExtensionSettings = import ./extensions.nix;
   };
